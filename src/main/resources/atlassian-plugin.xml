@@ -26,5 +26,21 @@
         <schedule cron-expression="0 0 0 * * ?" jitterSecs="10"/>
         <managed editable="true" keepingHistory="true" canRunAdhoc="true" canDisable="true"/>
     </job-config>
+
+    <ao key="ao-module">
+        <description>The module configuring the Active Objects service used by this plugin</description>
+        <entity>com.bstrctlmnt.ao.AffectedSpaces</entity>
+    </ao>
+
+    <servlet name="Configuration Servlet" i18n-name-key="configuration-servlet.name" key="configuration-servlet" class="com.bstrctlmnt.servlet.Configuration">
+        <description key="configuration-servlet.description">Plugin Configuration Servlet</description>
+        <url-pattern>/pingservice</url-pattern>
+    </servlet>
+
+    <web-item name="AdminWebItem" i18n-name-key="admin-web-item.name" key="admin-web-item" section="system.admin/configuration" weight="40">
+        <description key="admin-web-item.description">Link for Admin Servlet</description>
+        <label key="Ping Service Configuration"></label>
+        <link linkId="admin-web-item-link">/plugins/servlet/pingservice</link>
+    </web-item>
     
 </atlassian-plugin>
