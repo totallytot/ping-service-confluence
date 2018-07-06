@@ -30,6 +30,7 @@
     <ao key="ao-module">
         <description>The module configuring the Active Objects service used by this plugin</description>
         <entity>com.bstrctlmnt.ao.AffectedSpaces</entity>
+        <entity>com.bstrctlmnt.ao.AffectedGroups</entity>
     </ao>
 
     <servlet name="Configuration Servlet" i18n-name-key="configuration-servlet.name" key="configuration-servlet" class="com.bstrctlmnt.servlet.Configuration">

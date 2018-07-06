@@ -2,11 +2,6 @@
 <head>
     <title>Ping Service Configuration</title>
     <meta name="decorator" content="atl.admin">
-    <style>
-        .info {
-            border-left: 4px solid #2196F3;
-        }
-    </style>
 </head>
 <body>
 <form id="admin" class="aui" action="" method="POST">
@@ -19,12 +14,20 @@
         <input type="text" id="rspacekey" name="rspacekey" class="text">
     </div>
     <div class="field-group">
-        <label for="name">Add Outadted Interval:</label>
+        <label for="name">Add Affected Group:</label>
         <input type="text" id="group" name="group" class="text">
     </div>
     <div class="field-group">
-        <label for="name">Remove Outadted Interval:</label>
+        <label for="name">Remove Affected Group:</label>
         <input type="text" id="rgroup" name="rgroup" class="text">
+    </div>
+    <div class="field-group">
+        <label for="name">Add Outadted Interval:</label>
+        <input type="number" id="timeframe" name="timeframe" class="text">
+    </div>
+    <div class="field-group">
+        <label for="name">Remove Outadted Interval:</label>
+        <input type="number" id="rtimeframe" name="rtimeframe" class="text">
     </div>
     <div class="field-group">
         <input type="submit" value="Save" class="button">
@@ -37,7 +40,7 @@
         </div>
     </div>
     <div class="view">
-        <label for="name">Time Interval for Outdated Pages:</label>
+        <label for="name">Affected Groups:</label>
         <div class="field-value">
             $!affectedGroups
         </div>
