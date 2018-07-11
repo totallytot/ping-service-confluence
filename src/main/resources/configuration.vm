@@ -1,50 +1,57 @@
 <html>
-<head>
-    <title>Ping Service Configuration</title>
-    <meta name="decorator" content="atl.admin">
-</head>
-<body>
-<form id="admin" class="aui" action="" method="POST">
-    <div class="field-group">
-        <label for="name">Add Affected Space Key:</label>
-        <input type="text" id="spacekey" name="spacekey" class="text">
-    </div>
-    <div class="field-group">
-        <label for="name">Remove Affected Space Key:</label>
-        <input type="text" id="rspacekey" name="rspacekey" class="text">
-    </div>
-    <div class="field-group">
-        <label for="name">Add Affected Group:</label>
-        <input type="text" id="group" name="group" class="text">
-    </div>
-    <div class="field-group">
-        <label for="name">Remove Affected Group:</label>
-        <input type="text" id="rgroup" name="rgroup" class="text">
-    </div>
-    <div class="field-group">
-        <label for="name">Add Outadted Interval:</label>
-        <input type="number" id="timeframe" name="timeframe" class="text">
-    </div>
-    <div class="field-group">
-        <label for="name">Remove Outadted Interval:</label>
-        <input type="number" id="rtimeframe" name="rtimeframe" class="text">
-    </div>
-    <div class="field-group">
-        <input type="submit" value="Save" class="button">
-    </div>
-    <p> </p>
-    <div class="view">
-        <label for="name">Affected Space Keys:</label>
-        <div class="field-value">
-            $!affectedSpaces
-        </div>
-    </div>
-    <div class="view">
-        <label for="name">Affected Groups:</label>
-        <div class="field-value">
-            $!affectedGroups
-        </div>
-    </div>
-</form>
-</body>
+    <head>
+        <title>Ping Service Configuration</title>
+        <meta name="decorator" content="atl.admin">
+    </head>
+    <body>
+        <form id="admin" class="aui" action="" method="POST">
+            <div class="field-group">
+                <label for="name">Add Affected Space Key:</label>
+                <input type="text" id="spacekey" name="spacekey" class="text">
+            </div>
+            <div class="field-group">
+                <label for="name">Remove Affected Space Key:</label>
+                <input type="text" id="rspacekey" name="rspacekey" class="text">
+            </div>
+            <div class="field-group">
+                <label for="name">Add Affected Group:</label>
+                <input type="text" id="group" name="group" class="text">
+            </div>
+            <div class="field-group">
+                <label for="name">Remove Affected Group:</label>
+                <input type="text" id="rgroup" name="rgroup" class="text">
+            </div>
+            <div class="field-group">
+                <label for="name">Outadted Interval:</label>
+                <input type="number" min="1" id="timeframe" name="timeframe" class="text">
+            </div>
+
+            <div class="field-group">
+                <input type="submit" value="Save" class="button">
+            </div>
+
+            <p> </p>
+
+            <div class="view">
+                <label for="name">Affected Space Keys:</label>
+                <div class="field-value">
+                    $!affectedSpaces
+                </div>
+            </div>
+
+            <div class="view">
+                <label for="name">Affected Groups:</label>
+                <div class="field-value">
+                    $!affectedGroups
+                </div>
+            </div>
+
+            <div class="view">
+                <label for="name">Outadted Interval:</label>
+                <div class="field-value">
+                    $!timeframe
+                </div>
+            </div>
+        </form>
+    </body>
 </html>

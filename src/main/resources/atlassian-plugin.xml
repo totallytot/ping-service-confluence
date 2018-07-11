@@ -2,18 +2,18 @@
     <plugin-info>
         <description>${project.description}</description>
         <version>${project.version}</version>
-        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
         <param name="plugin-icon">images/pluginIcon.png</param>
         <param name="plugin-logo">images/pluginLogo.png</param>
     </plugin-info>
 
     <!-- add our i18n resource -->
     <resource type="i18n" name="i18n" location="ping-service-confluence"/>
-    
+
     <!-- add our web resources -->
     <web-resource key="ping-service-confluence-resources" name="ping-service-confluence Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
-        
+
         <resource type="download" name="ping-service-confluence.css" location="/css/ping-service-confluence.css"/>
         <resource type="download" name="ping-service-confluence.js" location="/js/ping-service-confluence.js"/>
         <resource type="download" name="images/" location="/images"/>
@@ -33,15 +33,17 @@
         <entity>com.bstrctlmnt.ao.AffectedGroups</entity>
     </ao>
 
-    <servlet name="Configuration Servlet" i18n-name-key="configuration-servlet.name" key="configuration-servlet" class="com.bstrctlmnt.servlet.Configuration">
+    <servlet name="Configuration Servlet" i18n-name-key="configuration-servlet.name" key="configuration-servlet"
+             class="com.bstrctlmnt.servlet.Configuration">
         <description key="configuration-servlet.description">Plugin Configuration Servlet</description>
         <url-pattern>/pingservice</url-pattern>
     </servlet>
 
-    <web-item name="AdminWebItem" i18n-name-key="admin-web-item.name" key="admin-web-item" section="system.admin/configuration" weight="40">
+    <web-item name="AdminWebItem" i18n-name-key="admin-web-item.name" key="admin-web-item"
+              section="system.admin/configuration" weight="40">
         <description key="admin-web-item.description">Link for Admin Servlet</description>
         <label key="Ping Service Configuration"></label>
         <link linkId="admin-web-item-link">/plugins/servlet/pingservice</link>
     </web-item>
-    
+
 </atlassian-plugin>

@@ -11,6 +11,7 @@ public class PingNotification {
     @ComponentImport
     private final MailServerManager mailServerManager;
 
+
     public PingNotification() {
         mailServerManager = (MailServerManager) ContainerManager.getInstance().getComponent("mailServerManager");
     }
@@ -20,6 +21,8 @@ public class PingNotification {
 
         if (smtpMailServer != null && emailAdr.length() > 0) {
             Email email = new Email(emailAdr);
+            email.setFrom(smtpMailServer.getDefaultFrom());
+            email.setMimeType("text/html");
             email.setSubject(subject);
             email.setBody(body);
             try {
