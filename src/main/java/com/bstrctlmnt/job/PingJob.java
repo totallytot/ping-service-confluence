@@ -7,6 +7,7 @@ import com.atlassian.confluence.setup.settings.SettingsManager;
 import com.atlassian.confluence.spaces.Space;
 import com.atlassian.confluence.spaces.SpaceManager;
 import com.atlassian.confluence.user.ConfluenceUser;
+import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
 import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
@@ -15,7 +16,6 @@ import com.atlassian.sal.api.transaction.TransactionTemplate;
 import com.atlassian.scheduler.JobRunner;
 import com.atlassian.scheduler.JobRunnerRequest;
 import com.atlassian.scheduler.JobRunnerResponse;
-import com.atlassian.user.GroupManager;
 import com.bstrctlmnt.ao.PluginData;
 import com.bstrctlmnt.mail.PingNotification;
 import com.bstrctlmnt.servlet.Configuration;
@@ -50,12 +50,12 @@ public class PingJob implements JobRunner, PluginData {
     private final UserManager userManager;
     @ComponentImport
     private final SettingsManager settingsManager;
-
-    private final Multimap<ConfluenceUser, Page> multiMap = ArrayListMultimap.create();
+    @ComponentImport
+    private final UserAccessor userAccessor;
 
     @Autowired
     public PingJob(PageManager pageManager, SpaceManager spaceManager, TransactionTemplate transactionTemplate, PluginSettingsFactory pluginSettingsFactory,
-                   ActiveObjects ao, GroupManager groupManager, UserManager userManager, SettingsManager settingsManager) {
+                   ActiveObjects ao, UserManager userManager, SettingsManager settingsManager, UserAccessor userAccessor) {
         this.pageManager = pageManager;
         this.spaceManager = spaceManager;
         this.transactionTemplate = transactionTemplate;
@@ -63,6 +63,7 @@ public class PingJob implements JobRunner, PluginData {
         this.userManager = userManager;
         this.ao = checkNotNull(ao);
         this.settingsManager = settingsManager;
+        this.userAccessor = userAccessor;
     }
 
     @Override
@@ -79,13 +80,12 @@ public class PingJob implements JobRunner, PluginData {
                 long timeframe = Long.parseLong((String) pluginSettings.get(Configuration.PLUGIN_STORAGE_KEY + ".timeframe"));
 
                 Set<String> affectedSpaces = getPublicSpacesFromAO(ao);
-
-                Set<String> groupsStr = getGroupsFromAO(ao);
                 Set<String> groups = getGroupsFromAO(ao);
 
                 LocalDateTime now = LocalDateTime.now();
 
                 if (timeframe != 0 && affectedSpaces != null && groups != null && affectedSpaces.size() > 0 && groups.size() > 0) {
+                    Multimap<ConfluenceUser, Page> multiMap = ArrayListMultimap.create();
 
                     affectedSpaces.forEach(spaceStr -> {
                         Space space = spaceManager.getSpace(spaceStr);
@@ -98,17 +98,15 @@ public class PingJob implements JobRunner, PluginData {
                             Duration deltaTime = Duration.between(pageLastUpdateDate, now);
                             long delta = deltaTime.toHours();
 
-
-                            //check Anonymous
                             ConfluenceUser creator = page.getCreator();
 
-                            if (delta > timeframe && checkUserMembership(creator, groups)) {
+                            if (creator != null && delta > timeframe && !userAccessor.isDeactivated(creator) && checkUserMembership(creator, groups)) {
                                 multiMap.put(creator, page);
                             }
                         });
                     });
 
-                    createNotificationAndSendEmail(multiMap);
+                    createNotificationAndSendEmail(multiMap, timeframe);
                 }
                 return null;
             }
@@ -118,6 +116,7 @@ public class PingJob implements JobRunner, PluginData {
 
     private boolean checkUserMembership(ConfluenceUser confluenceUser, Set<String> groups) {
         final boolean[] hasMemberShip = {false};
+
         groups.forEach(group -> {
             if (userManager.isUserInGroup(confluenceUser.getKey(), group)) {
                 hasMemberShip[0] = true;
@@ -127,13 +126,13 @@ public class PingJob implements JobRunner, PluginData {
         return hasMemberShip[0];
     }
 
-    private void createNotificationAndSendEmail(Multimap<ConfluenceUser, Page> multiMap) {
+    private void createNotificationAndSendEmail(Multimap<ConfluenceUser, Page> multiMap, long timeframe) {
         Set<ConfluenceUser> keys = multiMap.keySet();
         for (ConfluenceUser confluenceUser : keys) {
             StringBuilder body = new StringBuilder();
             Collection<Page> values = multiMap.get(confluenceUser);
 
-            body.append("<html><body>");
+            body.append(String.format("<html><body>Dear %s,<br><br>The following pages were not updated for a period of %d hours:<br>", confluenceUser.getFullName(), timeframe));
             values.forEach(page -> {
                 body.append(String.format("<a href=\"%s/pages/viewpage.action?pageId=%s\">%s</a>", settingsManager.getGlobalSettings().getBaseUrl(), page.getId(), page.getDisplayTitle()));
                 body.append("<br>");

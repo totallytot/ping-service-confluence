@@ -3,6 +3,7 @@ package com.bstrctlmnt.servlet;
 import com.atlassian.activeobjects.external.ActiveObjects;
 import com.atlassian.confluence.setup.settings.SettingsManager;
 import com.atlassian.confluence.spaces.SpaceManager;
+import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
 import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
@@ -52,10 +53,10 @@ public class Configuration extends HttpServlet implements PluginData {
     @ComponentImport
     private final PluginSettingsFactory pluginSettingsFactory;
 
-
     @Inject
     public Configuration(UserManager userManager, ActiveObjects ao, LoginUriProvider loginUriProvider,
-                         TemplateRenderer renderer, SpaceManager spaceManager, GroupManager groupManager, PluginSettingsFactory pluginSettingsFactory) {
+                         TemplateRenderer renderer, SpaceManager spaceManager, GroupManager groupManager,
+                         PluginSettingsFactory pluginSettingsFactory) {
         this.userManager = userManager;
         this.ao = checkNotNull(ao);
         this.loginUriProvider = loginUriProvider;
@@ -63,7 +64,6 @@ public class Configuration extends HttpServlet implements PluginData {
         this.spaceManager = spaceManager;
         this.groupManager = groupManager;
         this.pluginSettingsFactory = pluginSettingsFactory;
-
     }
 
     private void redirectToLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
