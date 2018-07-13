@@ -115,20 +115,14 @@ public class PingJob implements JobRunner, PluginData {
     }
 
     private boolean checkUserMembership(ConfluenceUser confluenceUser, Set<String> groups) {
-        final boolean[] hasMemberShip = {false};
-
-        groups.forEach(group -> {
-            if (userManager.isUserInGroup(confluenceUser.getKey(), group)) {
-                hasMemberShip[0] = true;
-                return;
-            }
-        });
-        return hasMemberShip[0];
+         return groups.stream().anyMatch(group -> userManager.isUserInGroup(confluenceUser.getKey(), group));
     }
 
     private void createNotificationAndSendEmail(Multimap<ConfluenceUser, Page> multiMap, long timeframe) {
         Set<ConfluenceUser> keys = multiMap.keySet();
-        for (ConfluenceUser confluenceUser : keys) {
+
+        for (ConfluenceUser confluenceUser : keys)
+        {
             StringBuilder body = new StringBuilder();
             Collection<Page> values = multiMap.get(confluenceUser);
 

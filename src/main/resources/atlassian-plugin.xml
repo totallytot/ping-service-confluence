@@ -1,4 +1,4 @@
-<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+<atlassian-plugin key="${atlassian.plugin.key}" name="Old Pages Review Service Plugin" plugins-version="2">
     <plugin-info>
         <description>${project.description}</description>
         <version>${project.version}</version>
@@ -21,7 +21,7 @@
         <context>ping-service-confluence</context>
     </web-resource>
 
-    <job-config name="Ping Service for Outdated Pages" key="pingJobConfig">
+    <job-config name="Old Pages Review Service" key="pingJobConfig">
         <job key="pingJob" perClusterJob="true"/>
         <schedule cron-expression="0 0 0 * * ?" jitterSecs="10"/>
         <managed editable="true" keepingHistory="true" canRunAdhoc="true" canDisable="true"/>
@@ -36,14 +36,14 @@
     <servlet name="Configuration Servlet" i18n-name-key="configuration-servlet.name" key="configuration-servlet"
              class="com.bstrctlmnt.servlet.Configuration">
         <description key="configuration-servlet.description">Plugin Configuration Servlet</description>
-        <url-pattern>/pingservice</url-pattern>
+        <url-pattern>/pagesreview</url-pattern>
     </servlet>
 
     <web-item name="AdminWebItem" i18n-name-key="admin-web-item.name" key="admin-web-item"
               section="system.admin/configuration" weight="40">
         <description key="admin-web-item.description">Link for Admin Servlet</description>
-        <label key="Ping Service Configuration"></label>
-        <link linkId="admin-web-item-link">/plugins/servlet/pingservice</link>
+        <label key="Old Pages Review Service Configuration"></label>
+        <link linkId="admin-web-item-link">/plugins/servlet/pagesreview</link>
     </web-item>
 
 </atlassian-plugin>

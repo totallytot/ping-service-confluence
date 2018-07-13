@@ -25,6 +25,7 @@ public class PingNotification {
             email.setMimeType("text/html");
             email.setSubject(subject);
             email.setBody(body);
+
             try {
                 smtpMailServer.send(email);
 

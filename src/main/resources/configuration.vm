@@ -1,28 +1,28 @@
 <html>
     <head>
-        <title>Ping Service Configuration</title>
+        <title>Old Pages Review Service Configuration</title>
         <meta name="decorator" content="atl.admin">
     </head>
     <body>
         <form id="admin" class="aui" action="" method="POST">
             <div class="field-group">
-                <label for="name">Add Affected Space Key:</label>
+                <label for="name">Add space key to be monitored:</label>
                 <input type="text" id="spacekey" name="spacekey" class="text">
             </div>
             <div class="field-group">
-                <label for="name">Remove Affected Space Key:</label>
+                <label for="name">Remove space key to be monitored:</label>
                 <input type="text" id="rspacekey" name="rspacekey" class="text">
             </div>
             <div class="field-group">
-                <label for="name">Add Affected Group:</label>
+                <label for="name">Add affected user group:</label>
                 <input type="text" id="group" name="group" class="text">
             </div>
             <div class="field-group">
-                <label for="name">Remove Affected Group:</label>
+                <label for="name">Remove affected user group:</label>
                 <input type="text" id="rgroup" name="rgroup" class="text">
             </div>
             <div class="field-group">
-                <label for="name">Period for Outdated Pages(hours):</label>
+                <label for="name">Period to consider pages as outdated(hours):</label>
                 <input type="number" min="1" id="timeframe" name="timeframe" class="text">
             </div>
 
@@ -33,21 +33,21 @@
             <br>
             <br>
             <div class="view">
-                <label for="name">Affected Space Keys:</label>
+                <label for="name">Monitored space keys:</label>
                 <div class="field-value">
                     $!affectedSpaces
                 </div>
             </div>
 
             <div class="view">
-                <label for="name">Affected Groups:</label>
+                <label for="name">Affected user groups:</label>
                 <div class="field-value">
                     $!affectedGroups
                 </div>
             </div>
 
             <div class="view">
-                <label for="name">Outadted Interval:</label>
+                <label for="name">Period to consider pages as outdated:</label>
                 <div class="field-value">
                     $!timeframe
                 </div>
@@ -55,9 +55,9 @@
 
             <div class="Info">
                 <br>
-                <strong>Configuration:</strong> visit Administration - Scheduled Jobs in order to set time interval for running job<br>
+                <strong>Configuration:</strong> visit Administration - Scheduled Jobs in order to set time interval for running job or to run it manually<br>
                 <strong>Default schedule:</strong> each day at 00:00:00<br>
-                <strong>Job:</strong> Ping Job<br>
+                <strong>Job:</strong> Old Pages Review Job<br>
             </div>
 
         </form>
