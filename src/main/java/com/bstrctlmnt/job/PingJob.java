@@ -96,7 +96,8 @@ public class PingJob implements JobRunner, PluginData {
                             Instant instant = Instant.ofEpochMilli(page.getLastModificationDate().getTime());
                             LocalDateTime pageLastUpdateDate = LocalDateTime.ofInstant(instant, ZoneOffset.UTC);
                             Duration deltaTime = Duration.between(pageLastUpdateDate, now);
-                            long delta = deltaTime.toHours();
+                            //long delta = deltaTime.toHours();
+                            long delta = deltaTime.toDays();
 
                             ConfluenceUser creator = page.getCreator();
 
@@ -126,7 +127,7 @@ public class PingJob implements JobRunner, PluginData {
             StringBuilder body = new StringBuilder();
             Collection<Page> values = multiMap.get(confluenceUser);
 
-            body.append(String.format("<html><body>Dear %s,<br><br>The following pages were not updated for a period of %d hours:<br>", confluenceUser.getFullName(), timeframe));
+            body.append(String.format("<html><body>Dear %s,<br><br>Could you please take a look at the pages below. You are the owner of them, but looks like their content wasn't updated for a while (%d day(s)):<br>", confluenceUser.getFullName(), timeframe));
             values.forEach(page -> {
                 body.append(String.format("<a href=\"%s/pages/viewpage.action?pageId=%s\">%s</a>", settingsManager.getGlobalSettings().getBaseUrl(), page.getId(), page.getDisplayTitle()));
                 body.append("<br>");
@@ -134,7 +135,7 @@ public class PingJob implements JobRunner, PluginData {
             body.append("</body></html>");
 
             PingNotification notification = new PingNotification();
-            notification.sendEmail(confluenceUser.getEmail(), "Requires Update", body.toString());
+            notification.sendEmail(confluenceUser.getEmail(), "notification: It's time to review your pages", body.toString());
         }
     }
 }

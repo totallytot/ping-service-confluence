@@ -10,7 +10,7 @@
                 <input type="text" id="spacekey" name="spacekey" class="text">
             </div>
             <div class="field-group">
-                <label for="name">Remove space key to be monitored:</label>
+                <label for="name">Remove space from the monitoring:</label>
                 <input type="text" id="rspacekey" name="rspacekey" class="text">
             </div>
             <div class="field-group">
@@ -22,7 +22,7 @@
                 <input type="text" id="rgroup" name="rgroup" class="text">
             </div>
             <div class="field-group">
-                <label for="name">Period to consider pages as outdated(hours):</label>
+                <label for="name">Period to consider pages as outdated (day(s)):</label>
                 <input type="number" min="1" id="timeframe" name="timeframe" class="text">
             </div>
 
@@ -45,7 +45,7 @@
             </div>
 
             <div class="view">
-                <label for="name">Period to consider pages as outdated:</label>
+                <label for="name">Period to consider pages as outdated (day(s)):</label>
                 <div class="field-value">
                     $!timeframe
                 </div>
