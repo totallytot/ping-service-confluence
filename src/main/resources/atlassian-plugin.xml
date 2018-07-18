@@ -13,11 +13,7 @@
     <!-- add our web resources -->
     <web-resource key="ping-service-confluence-resources" name="ping-service-confluence Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
-
-        <resource type="download" name="ping-service-confluence.css" location="/css/ping-service-confluence.css"/>
-        <resource type="download" name="ping-service-confluence.js" location="/js/ping-service-confluence.js"/>
         <resource type="download" name="images/" location="/images"/>
-
         <context>ping-service-confluence</context>
     </web-resource>
 
