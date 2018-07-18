@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97b1fcc1-af9f-4fdd-b278-59932e4f4e63" name="Default" comment="Logic creation">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_dbex_1_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_plugin_1_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_templaterenderer_atlassian_template_renderer_api_1_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_collections_google_collections_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_activeobjects_activeobjects_1_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/.gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/bstrctlmnt/api/MyPluginComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/bstrctlmnt/impl/MyPluginComponentImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/it/com/bstrctlmnt/MyComponentWiredTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/ut/com/bstrctlmnt/MyComponentUnitTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/resources/atlassian-plugin.xml" afterPath="" />
+    <list default="true" id="97b1fcc1-af9f-4fdd-b278-59932e4f4e63" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ping-service-confluence.iml" afterPath="$PROJECT_DIR$/ping-service-confluence.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_dbex_1_2_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_core_1_5_0.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_spi_1_2_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_spi_1_5_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,6 +115,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\ping-service-confluence" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -241,7 +229,7 @@
       <workItem from="1527588182003" duration="13699000" />
       <workItem from="1527623928841" duration="63000" />
       <workItem from="1527624522644" duration="465000" />
-      <workItem from="1531923165497" duration="1320000" />
+      <workItem from="1531923165497" duration="1361000" />
     </task>
     <task id="LOCAL-00001" summary="Logic creation">
       <created>1527624902136</created>
@@ -250,11 +238,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527624902136</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Logic creation">
+      <created>1531924495516</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1531924495520</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18817000" />
+    <option name="totallyTimeSpent" value="18858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -491,7 +486,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/.gitignore">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
