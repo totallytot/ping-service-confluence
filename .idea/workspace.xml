@@ -2,1033 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b1fcc1-af9f-4fdd-b278-59932e4f4e63" name="Default" comment="Logic creation">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/ProductFilter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/OnlyInProduct.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/Profile.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/component/BambooComponent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/component/BitbucketComponent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/component/ClasspathComponent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/component/ConfluenceComponent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/component/FecruComponent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/component/JiraComponent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/component/RefappComponent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/component/Scanned.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/component/StashComponent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/export/ExportAsDevService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/export/ExportAsService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/export/ModuleType.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/imports/BambooImport.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/imports/BitbucketImport.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/imports/ComponentImport.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/imports/ConfluenceImport.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/imports/FecruImport.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/imports/JiraImport.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/imports/RefappImport.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/annotation/imports/StashImport.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/AtlassianScannerBeanDefinitionParser.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/AtlassianScannerNamespaceHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/ClassIndexBeanDefinitionScanner.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/ComponentImportBeanFactoryPostProcessor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/DevModeBeanInitialisationLoggerBeanPostProcessor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/ExportedSeviceManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/GenericOsgiServiceFactoryBean.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/OsgiBundleContextAccessor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/OsgiServiceFactoryBeanFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/ServiceExporterBeanPostProcessor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/gemini/GeminiOsgiBundleContextAccessor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/gemini/GeminiOsgiServiceFactoryBean.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/gemini/GeminiOsgiServiceFactoryBeanFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/springdm/SpringOsgiBundleContextAccessor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/springdm/SpringOsgiServiceFactoryBean.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/extension/springdm/SpringOsgiServiceFactoryBeanFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/util/AnnotationIndexReader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/util/BeanDefinitionChecker.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/util/CommonConstants.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/util/ProductFilterUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/util/SpringDMUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/bstrctlmnt/api/MyPluginComponent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/bstrctlmnt/impl/MyPluginComponentImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/bstrctlmnt/job/PingJob$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/bstrctlmnt/job/PingJob.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/bstrctlmnt/mail/PingNotification.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/DefaultDateTypeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/ExclusionStrategy.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/FieldAttributes.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/FieldNamingPolicy$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/FieldNamingPolicy$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/FieldNamingPolicy$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/FieldNamingPolicy$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/FieldNamingPolicy$5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/FieldNamingPolicy.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/FieldNamingStrategy.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/Gson$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/Gson$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/Gson$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/Gson$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/Gson$5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/Gson$6.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/Gson$FutureTypeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/Gson.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/GsonBuilder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/InstanceCreator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonArray.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonDeserializationContext.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonDeserializer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonElement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonIOException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonNull.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonObject.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonParseException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonParser.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonPrimitive.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonSerializationContext.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonSerializer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonStreamParser.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/JsonSyntaxException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/LongSerializationPolicy$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/LongSerializationPolicy$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/LongSerializationPolicy.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/TreeTypeAdapter$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/TreeTypeAdapter$SingleTypeFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/TreeTypeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/TypeAdapter$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/TypeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/TypeAdapterFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/annotations/Expose.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/annotations/SerializedName.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/annotations/Since.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/annotations/Until.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/$Gson$Preconditions.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/$Gson$Types$GenericArrayTypeImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/$Gson$Types$ParameterizedTypeImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/$Gson$Types$WildcardTypeImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/$Gson$Types.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ConstructorConstructor$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ConstructorConstructor$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ConstructorConstructor$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ConstructorConstructor$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ConstructorConstructor$5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ConstructorConstructor$6.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ConstructorConstructor$7.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ConstructorConstructor$8.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ConstructorConstructor$9.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ConstructorConstructor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/Excluder$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/Excluder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/JsonReaderInternalAccess.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/LazilyParsedNumber.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/ObjectConstructor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/Primitives.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/Streams$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/Streams$AppendableWriter$CurrentWrite.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/Streams$AppendableWriter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/Streams.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/StringMap$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/StringMap$EntrySet$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/StringMap$EntrySet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/StringMap$KeySet$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/StringMap$KeySet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/StringMap$LinkedEntry.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/StringMap$LinkedHashIterator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/StringMap$Values$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/StringMap$Values.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/StringMap.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/UnsafeAllocator$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/UnsafeAllocator$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/UnsafeAllocator$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/UnsafeAllocator$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/UnsafeAllocator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ArrayTypeAdapter$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ArrayTypeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/CollectionTypeAdapterFactory$Adapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/CollectionTypeAdapterFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/DateTypeAdapter$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/DateTypeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/JsonTreeReader$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/JsonTreeReader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/JsonTreeWriter$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/JsonTreeWriter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/MapTypeAdapterFactory$Adapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/MapTypeAdapterFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ObjectTypeAdapter$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ObjectTypeAdapter$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ObjectTypeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ReflectiveThrowableTypeAdapterFactory$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ReflectiveThrowableTypeAdapterFactory$Adapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ReflectiveThrowableTypeAdapterFactory$BoundField.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ReflectiveThrowableTypeAdapterFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory$Adapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory$BoundField.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/SqlDateTypeAdapter$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/SqlDateTypeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TimeTypeAdapter$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TimeTypeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapterRuntimeTypeWrapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$10.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$11.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$12.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$13.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$14.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$15.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$16.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$17.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$18.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$19.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$20.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$21.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$22$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$22.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$23.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$24.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$25.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$26.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$27.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$28.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$29.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$30.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$31.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$32.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$6.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$7.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$8.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$9.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/internal/bind/TypeAdapters.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/reflect/TypeToken.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/stream/JsonReader$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/stream/JsonReader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/stream/JsonScope.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/stream/JsonToken.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/stream/JsonWriter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/stream/MalformedJsonException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/google/gson/stream/StringPool.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/images/pluginIcon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/images/pluginLogo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/confluence-original.war" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/confluence-plugin-test-resources.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/confluence.war" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/analytics-logs/e43b9d35ec10fe17516efb7410d3183d.atlassian-analytics.log.2018-05-29.1.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/37/65/65537/65564/2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/39/65/65539/65556/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/39/65/65539/65565/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/39/65/65539/65572/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/40/65/65540/65558/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/41/65/65541/65550/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/41/65/65541/65555/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/41/65/65541/65566/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/41/65/65541/65569/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/41/65/65541/65571/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/43/65/65543/65557/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/43/65/65543/65559/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/43/65/65543/65563/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/44/65/65544/65562/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/44/65/65544/65567/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/44/65/65544/65568/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/44/65/65544/65570/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/45/65/65545/65551/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/45/65/65545/65552/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/45/65/65545/65554/2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/45/65/65545/65560/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/attachments/ver003/55/98/98305/47/65/65547/65561/1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/database/h2db.h2.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_0.cfe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_0.cfs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_0.si" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_1.cfe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_1.cfs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_1.si" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_3.cfe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_3.cfs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_3.si" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_3_2.del" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_5.cfe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_5.cfs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_5.si" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_5_1.del" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_6.cfe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_6.cfs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_6.si" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_7.cfe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_7.cfs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_7.si" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/_7_1.del" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/edge/_0.cfe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/edge/_0.cfs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/edge/_0.si" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/edge/_1.cfe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/edge/_1.cfs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/edge/_1.si" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/edge/segments.gen" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/edge/segments_3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/edge/write.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/segments.gen" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/segments_9" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/index/write.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-cache/1527606496246ping-service-confluence-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-cache/1527606497787ping-service-confluence-1.0-tests.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle1/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle10/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle104/version0.0/confluence-ui-rest-6.7.1_1518405298000.jar-embedded/META-INF/lib/confluence-api-5.4-OD-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle11/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle118/version0.0/recently-viewed-plugin-6.0.1_1518405300000.jar-embedded/META-INF/lib/usercompatibility-confluence-2.1.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle118/version0.0/recently-viewed-plugin-6.0.1_1518405300000.jar-embedded/META-INF/lib/usercompatibility-sal-0.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle12/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle13/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle139/version0.0/atlassian-gadgets-spi-4.2.22.jar-embedded/META-INF/lib/jcip-annotations-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle139/version0.0/atlassian-gadgets-spi-4.2.22.jar-embedded/META-INF/lib/jsr305-1.3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle14/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-gadgets-shared-4.2.22.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-4.2.22.jar-embedded/META-INF/lib/httpcache4j-api-3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-4.2.22.jar-embedded/META-INF/lib/httpcache4j-core-3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-4.2.22.jar-embedded/META-INF/lib/httpcache4j-storage-api-3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-4.2.22.jar-embedded/META-INF/lib/jackson-core-asl-1.4.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-4.2.22.jar-embedded/META-INF/lib/jackson-mapper-asl-1.4.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-4.2.22.jar-embedded/META-INF/lib/resolvers-httpcomponents-httpclient-3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle141/version0.0/atlassian-gadgets-embedded-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-gadgets-shared-4.2.22.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle141/version0.0/atlassian-gadgets-embedded-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle141/version0.0/atlassian-gadgets-embedded-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle142/version0.0/atlassian-gadgets-oauth-service-provider-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle142/version0.0/atlassian-gadgets-oauth-service-provider-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-gadgets-shared-4.2.22.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-http-1.1.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-oauth-bridge-1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/guice-1.0-atlassian-2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/hamcrest-all-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/oauth-20090617.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/oauth-provider-20090531.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/shindig-common-2.0.1-atlassian-hosted.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/shindig-features-2.0.1-atlassian-hosted.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/shindig-gadgets-2.0.1-atlassian-hosted.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/shindig-social-api-2.0.1-atlassian-hosted.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/snappy-java-1.1.1.7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-4.2.22.jar-embedded/META-INF/lib/xstream-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle144/version0.0/atlassian-gadgets-publisher-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-gadgets-shared-4.2.22.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle144/version0.0/atlassian-gadgets-publisher-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle144/version0.0/atlassian-gadgets-publisher-plugin-4.2.22.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle15/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle158/version0.0/atlassian-oauth-consumer-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/atlassian-oauth-shared-2.0.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle159/version0.0/atlassian-oauth-consumer-sal-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/atlassian-oauth-bridge-2.0.1-m001.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle159/version0.0/atlassian-oauth-consumer-sal-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/atlassian-oauth-consumer-core-2.0.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle159/version0.0/atlassian-oauth-consumer-sal-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/atlassian-oauth-shared-2.0.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle159/version0.0/atlassian-oauth-consumer-sal-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/oauth-20100601-atlassian-2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle16/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/atlassian-oauth-service-provider-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/atlassian-oauth-bridge-2.0.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/atlassian-oauth-service-provider-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/atlassian-oauth-shared-2.0.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/atlassian-oauth-service-provider-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/atlassian-scheduler-compat-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/atlassian-oauth-service-provider-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/oauth-20100601-atlassian-2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/atlassian-oauth-service-provider-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/oauth-provider-20100601-atlassian-2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle161/version0.0/atlassian-oauth-service-provider-sal-plugin-2.0.4_1518405298000.jar-embedded/META-INF/lib/atlassian-oauth-shared-2.0.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle166/version0.0/atlassian-nav-links-plugin-4.3.0_1518405300000.jar-embedded/META-INF/lib/atlassian-nav-links-api-4.3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle166/version0.0/atlassian-nav-links-plugin-4.3.0_1518405300000.jar-embedded/META-INF/lib/atlassian-nav-links-spi-4.3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle170/version0.0/atlassian-project-creation-plugin-2.0.11.jar-embedded/META-INF/lib/atlassian-project-creation-spi-2.0.11.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle175/version0.0/avatar-plugin-1.3.5.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle175/version0.0/avatar-plugin-1.3.5.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle178/version0.0/confluence-tdm-merger-6.7.1_1518405300000.jar-embedded/META-INF/lib/TDM-0.10.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle178/version0.0/confluence-tdm-merger-6.7.1_1518405300000.jar-embedded/META-INF/lib/wstx-asl-3.2.9-atlassian-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle184/version0.0/less-transformer-plugin-3.2.1.jar-embedded/META-INF/lib/commons-codec-1.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle184/version0.0/less-transformer-plugin-3.2.1.jar-embedded/META-INF/lib/lesscss-core-3.2.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle184/version0.0/less-transformer-plugin-3.2.1.jar-embedded/META-INF/lib/lesscss-spi-3.2.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle184/version0.0/less-transformer-plugin-3.2.1.jar-embedded/META-INF/lib/rhino-1.7R5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle186/version0.0/atlassian-shortcuts-plugin-1.3.2_1518405300000.jar-embedded/META-INF/lib/atlassian-shortcuts-module-api-1.3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle186/version0.0/atlassian-shortcuts-plugin-1.3.2_1518405300000.jar-embedded/META-INF/lib/json-20070829.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/atlassian-pretty-urls-plugin-2.0.0.jar-embedded/META-INF/lib/atlassian-plugin-point-safety-0.14.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/atlassian-pretty-urls-plugin-2.0.0.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/atlassian-pretty-urls-plugin-2.0.0.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/atlassian-pretty-urls-plugin-2.0.0.jar-embedded/META-INF/lib/atlassian-util-concurrent-2.4.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/atlassian-pretty-urls-plugin-2.0.0.jar-embedded/META-INF/lib/fugue-2.1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-4.0.2.jar-embedded/META-INF/lib/antlr4-annotations-4.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-4.0.2.jar-embedded/META-INF/lib/antlr4-runtime-4.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-4.0.2.jar-embedded/META-INF/lib/atlassian-query-lang-3.0.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-4.0.2.jar-embedded/META-INF/lib/atlassian-query-lang-spi-3.0.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-4.0.2.jar-embedded/META-INF/lib/confluence-query-lang-spi-4.0.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-4.0.2.jar-embedded/META-INF/lib/javassist-3.20.0-GA.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-4.0.2.jar-embedded/META-INF/lib/org.abego.treelayout.core-1.0.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-4.0.2.jar-embedded/META-INF/lib/reflections-0.9.10.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/aopalliance-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/atlassian-soy-core-4.5.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/guice-assistedinject-3.1.8.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/guice-multibindings-3.1.8.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/icu4j-51.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/javax.inject-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/jsr305-2.0.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/sisu-guice-3.1.8.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/soy-template-renderer-api-4.5.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/soy-template-renderer-plugin-api-4.5.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/soy-template-plugin-4.5.0.jar-embedded/META-INF/lib/soycompiler-20140422.18-atlassian3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle2/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/JavaPpt-5.2.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/common-5.2.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/common-image-3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/common-io-3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/common-lang-3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/commons-exec-1.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/extractor-5.2.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/fontmanager-0.8.6-atlassian-1.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/imageio-core-3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/imageio-pict-3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/jbig2-5.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/jna-4.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/jna-platform-4.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/ooxml-schemas-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/oshi-core-3.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/pdf-renderer-1.13-atlassian-6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/pixie-0.8.6-atlassian-1.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/poi-3.5-FINAL.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/poi-ooxml-3.5-FINAL.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/poi-scratchpad-3.5-FINAL.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/OfficeConnector-5.2.0.jar-embedded/META-INF/lib/xmlbeans-2.3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle239/version0.0/confluence-macro-usage-admin-plugin-1.0.9.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle239/version0.0/confluence-macro-usage-admin-plugin-1.0.9.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle247/version0.0/synchrony-interop-6.7.1.jar-embedded/META-INF/lib/atlassian-processutils-1.7.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle247/version0.0/synchrony-interop-6.7.1.jar-embedded/META-INF/lib/commons-exec-1.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle247/version0.0/synchrony-interop-6.7.1.jar-embedded/META-INF/lib/jna-4.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle247/version0.0/synchrony-interop-6.7.1.jar-embedded/META-INF/lib/jna-platform-4.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle247/version0.0/synchrony-interop-6.7.1.jar-embedded/META-INF/lib/oshi-core-3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle247/version0.0/synchrony-interop-6.7.1.jar-embedded/META-INF/lib/winp-1.17-atlassian1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle247/version0.0/synchrony-interop-6.7.1.jar-embedded/META-INF/lib/zt-exec-1.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle247/version0.0/synchrony-interop-6.7.1.jar-embedded/META-INF/lib/zt-process-killer-1.8.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle251/version0.0/httpservice-bridge-0.6.2.jar-embedded/META-INF/lib/httpservice-bridge-legacy-0.6.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle251/version0.0/httpservice-bridge-0.6.2.jar-embedded/META-INF/lib/org.apache.felix.webconsole-1.2.8.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/api-1.0.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/fugue-2.1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/gson-2.2.2-atlassian-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/jansi-1.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/joor-0.9.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/jpathwatch-0.95.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/org.apache.sling.commons.osgi-2.0.4-incubator.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/quickreload-jira-support-1.24.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle254/version0.0/jslibs-0.11.1.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle254/version0.0/jslibs-0.11.1.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/activation-1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/aopalliance-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/asm-all-3.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/atlassian-plugins-osgi-testrunner-1.2.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/geronimo-annotation_1.1_spec-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/gson-2.2.2-atlassian-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/guava-r06.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/guice-3.0-rc2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/guice-assistedinject-3.0-rc2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/guice-multibindings-3.0-rc2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/icu4j-4.8.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/javax.inject-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/jaxb-impl-2.2.1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/soycompiler-20111410-r22-atlassian5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/upm-api-2.15.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/wink-client-1.1.3-incubating.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/atlassian-plugins-osgi-testrunner-bundle-1.2.3_1527587720000.jar-embedded/META-INF/lib/wink-common-1.1.3-incubating.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle259/version0.0/plugin-data-editor-1.2_1527587720000.jar-embedded/META-INF/lib/jackson-core-asl-1.4.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle259/version0.0/plugin-data-editor-1.2_1527587720000.jar-embedded/META-INF/lib/jackson-jaxrs-1.4.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle259/version0.0/plugin-data-editor-1.2_1527587720000.jar-embedded/META-INF/lib/jackson-mapper-asl-1.4.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle264/version0.0/org.apache.felix.webconsole-1.2.8.jar-embedded/commons-fileupload-1.1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle264/version0.0/org.apache.felix.webconsole-1.2.8.jar-embedded/commons-io-1.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle264/version0.0/org.apache.felix.webconsole-1.2.8.jar-embedded/json-20070829.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle264/version0.0/org.apache.felix.webconsole-1.2.8.jar-embedded/org.apache.felix.bundlerepository-1.0.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle293/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/1527606497787ping-service-confluence-1.0-tests_1527606497787.jar-embedded/META-INF/lib/atlassian-plugins-osgi-testrunner-1.2.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/1527606497787ping-service-confluence-1.0-tests_1527606497787.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/1527606497787ping-service-confluence-1.0-tests_1527606497787.jar-embedded/META-INF/lib/geronimo-annotation_1.1_spec-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/1527606497787ping-service-confluence-1.0-tests_1527606497787.jar-embedded/META-INF/lib/gson-2.2.2-atlassian-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/1527606497787ping-service-confluence-1.0-tests_1527606497787.jar-embedded/META-INF/lib/jaxb-api-2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/1527606497787ping-service-confluence-1.0-tests_1527606497787.jar-embedded/META-INF/lib/jaxb-impl-2.2.1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/1527606497787ping-service-confluence-1.0-tests_1527606497787.jar-embedded/META-INF/lib/stax-api-1.0-2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/1527606497787ping-service-confluence-1.0-tests_1527606497787.jar-embedded/META-INF/lib/upm-api-2.15.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/1527606497787ping-service-confluence-1.0-tests_1527606497787.jar-embedded/META-INF/lib/wink-client-1.1.3-incubating.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/1527606497787ping-service-confluence-1.0-tests_1527606497787.jar-embedded/META-INF/lib/wink-common-1.1.3-incubating.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle3/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle31/version0.0/confluence-editor-6.7.1_1518405298000.jar-embedded/META-INF/lib/nutz-0.6.1-atlassian.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle4/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle5/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle6/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle7/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle70/version0.0/confluence-lookandfeel-6.7.1_1518405298000.jar-embedded/META-INF/lib/atlassian-look-and-feel-1.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle8/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle88/version0.0/confluence-quicknav-6.7.1_1518405298000.jar-embedded/META-INF/lib/gson-2.8.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle9/version0.0/bundle.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle94/version0.0/confluence-sal-plugin-6.7.1_1518405298000.jar-embedded/META-INF/lib/atlassian-secure-utils-3.2.11.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle94/version0.0/confluence-sal-plugin-6.7.1_1518405298000.jar-embedded/META-INF/lib/confluence-sal-base-6.7.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle94/version0.0/confluence-sal-plugin-6.7.1_1518405298000.jar-embedded/META-INF/lib/sal-core-3.1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle94/version0.0/confluence-sal-plugin-6.7.1_1518405298000.jar-embedded/META-INF/lib/sal-trust-api-3.1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle94/version0.0/confluence-sal-plugin-6.7.1_1518405298000.jar-embedded/META-INF/lib/sal-trusted-apps-plugin-support-3.1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitattributes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ping-service-confluence.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/com.atlassian.plugin/atlassian-spring-scanner-annotation/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/com.atlassian.plugin/atlassian-spring-scanner-annotation/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/com.atlassian.plugin/atlassian-spring-scanner-runtime/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/com.atlassian.plugin/atlassian-spring-scanner-runtime/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/plugin-components/component" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/plugin-components/exports" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/plugin-components/imports" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring.handlers" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring.schemas" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring/plugin-context.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/atlassian-plugin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/atlassian/plugin/spring/scanner/atlassian-scanner.xsd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/css/ping-service-confluence-min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/css/ping-service-confluence.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/js/ping-service-confluence-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/js/ping-service-confluence.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/ping-service-confluence.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/analytics-logs/e43b9d35ec10fe17516efb7410d3183d.atlassian-analytics.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/confluence.cfg.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/database/h2db.lock.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/journal/edge_index" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/journal/main_index" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/logs/atlassian-synchrony.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/logs/instrumentation.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle0/bundle.id" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle1/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle1/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle10/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle10/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle100/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle100/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle101/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle101/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle102/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle102/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle103/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle103/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle104/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle104/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle105/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle105/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle106/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle106/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle107/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle107/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle108/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle108/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle109/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle109/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle11/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle11/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle110/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle110/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle111/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle111/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle112/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle112/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle113/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle113/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle114/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle114/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle115/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle115/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle116/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle116/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle117/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle117/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle118/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle118/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle119/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle119/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle12/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle12/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle120/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle120/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle121/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle121/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle122/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle122/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle123/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle123/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle124/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle124/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle125/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle125/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle126/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle126/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle127/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle127/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle128/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle128/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle129/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle129/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle13/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle13/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle130/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle130/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle131/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle131/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle132/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle132/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle133/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle133/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle134/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle134/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle135/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle135/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle136/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle136/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle137/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle137/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle138/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle138/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle139/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle139/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle14/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle14/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle141/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle141/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle142/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle142/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle144/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle144/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle145/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle145/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle146/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle146/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle147/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle147/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle148/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle148/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle149/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle149/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle15/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle15/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle150/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle150/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle151/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle151/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle152/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle152/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle153/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle153/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle154/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle154/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle155/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle155/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle156/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle156/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle157/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle157/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle158/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle158/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle159/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle159/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle16/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle16/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle161/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle161/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle162/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle162/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle163/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle163/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle164/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle164/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle165/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle165/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle166/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle166/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle167/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle167/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle168/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle168/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle169/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle169/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle17/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle17/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle170/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle170/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle171/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle171/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle172/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle172/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle173/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle173/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle174/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle174/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle175/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle175/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle176/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle176/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle177/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle177/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle178/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle178/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle179/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle179/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle18/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle18/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle180/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle180/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle181/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle181/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle182/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle182/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle183/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle183/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle184/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle184/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle185/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle185/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle186/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle186/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle187/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle187/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle19/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle19/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle190/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle191/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle191/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle192/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle192/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle193/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle193/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle194/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle194/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle195/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle195/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle196/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle196/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle197/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle197/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle198/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle198/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle199/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle199/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle2/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle2/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle20/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle20/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle200/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle200/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle201/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle201/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle202/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle202/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle203/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle203/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle204/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle204/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle205/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle205/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle206/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle206/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle207/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle207/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle208/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle208/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle209/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle209/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle21/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle21/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle210/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle210/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle211/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle211/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle212/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle212/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle213/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle213/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle214/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle214/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle215/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle215/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle216/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle216/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle217/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle217/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle218/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle218/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle219/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle219/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle22/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle22/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle220/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle220/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle221/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle221/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle222/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle222/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle223/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle223/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle224/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle224/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle225/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle225/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle226/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle226/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle227/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle228/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle228/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle229/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle229/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle23/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle23/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle230/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle230/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle231/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle231/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle232/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle232/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle233/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle233/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle234/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle234/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle235/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle235/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle236/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle236/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle237/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle237/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle238/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle238/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle239/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle239/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle24/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle24/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle240/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle240/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle241/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle241/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle242/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle242/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle243/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle243/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle245/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle245/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle246/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle246/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle247/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle247/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle248/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle248/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle249/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle249/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle25/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle25/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle250/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle250/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle251/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle251/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle252/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle253/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle253/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle254/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle254/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle255/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle256/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle256/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle257/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle257/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle258/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle258/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle259/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle259/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle26/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle26/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle260/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle260/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle263/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle263/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle264/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle264/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle265/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle265/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle266/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle266/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle27/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle27/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle28/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle28/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle29/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle29/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle293/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle293/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle294/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle3/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle3/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle30/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle30/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle31/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle31/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle32/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle32/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle33/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle33/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle34/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle34/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle35/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle35/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle36/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle36/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle37/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle37/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle38/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle38/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle39/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle39/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle4/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle4/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle40/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle40/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle41/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle41/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle42/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle42/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle43/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle43/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle44/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle44/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle45/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle45/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle46/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle46/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle47/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle47/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle48/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle48/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle49/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle49/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle5/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle5/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle50/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle50/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle51/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle51/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle52/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle52/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle53/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle53/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle54/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle54/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle55/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle55/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle56/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle56/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle57/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle57/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle58/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle58/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle59/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle59/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle6/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle6/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle60/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle60/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle61/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle61/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle62/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle62/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle63/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle63/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle64/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle64/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle65/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle65/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle66/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle66/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle67/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle67/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle68/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle68/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle69/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle69/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle7/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle7/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle70/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle70/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle71/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle71/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle72/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle72/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle73/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle73/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle74/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle74/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle75/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle75/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle76/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle76/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle77/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle77/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle78/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle78/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle79/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle79/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle8/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle8/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle80/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle80/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle81/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle81/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle82/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle82/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle83/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle83/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle84/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle84/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle85/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle85/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle86/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle86/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle87/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle87/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle88/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle88/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle89/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle89/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle9/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle9/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle90/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle90/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle91/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle91/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle92/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle92/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle93/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle93/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle94/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle94/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle95/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle95/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle96/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle96/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle97/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle97/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle98/bundle.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle98/version0.0/revision.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle99/bundle.info" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_dbex_1_5_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_plugin_1_5_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_templaterenderer_atlassian_template_renderer_api_1_3_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_collections_google_collections_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_activeobjects_activeobjects_1_5_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/bstrctlmnt/api/MyPluginComponent.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/bstrctlmnt/impl/MyPluginComponentImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/it/com/bstrctlmnt/MyComponentWiredTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/ut/com/bstrctlmnt/MyComponentUnitTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/resources/atlassian-plugin.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ping-service-confluence.iml" afterPath="$PROJECT_DIR$/ping-service-confluence.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_dbex_1_2_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_core_1_5_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_spi_1_2_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_activeobjects_activeobjects_spi_1_5_0.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1040,45 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PingJob.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bstrctlmnt/job/PingJob.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-748">
-              <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PingNotification.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bstrctlmnt/mail/PingNotification.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ping-service-confluence.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ping-service-confluence.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -1109,6 +67,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/ping-service-confluence.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/bstrctlmnt/mail/PingNotification.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bstrctlmnt/job/PingJob.java" />
+        <option value="$PROJECT_DIR$/src/main/.gitignore" />
       </list>
     </option>
   </component>
@@ -1121,11 +80,11 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/Atlassian/atlassian-plugin-sdk/apache-maven-3.2.1" />
+        <option name="mavenHome" value="D:/Atlassian/atlassian-plugin-sdk-6.3.10/apache-maven-3.2.1" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="2" />
     <option name="width" value="1612" />
@@ -1147,6 +106,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1158,10 +120,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1169,6 +128,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1279,6 +241,7 @@
       <workItem from="1527588182003" duration="13699000" />
       <workItem from="1527623928841" duration="63000" />
       <workItem from="1527624522644" duration="465000" />
+      <workItem from="1531923165497" duration="1320000" />
     </task>
     <task id="LOCAL-00001" summary="Logic creation">
       <created>1527624902136</created>
@@ -1291,27 +254,25 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17497000" />
+    <option name="totallyTimeSpent" value="18817000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="2" width="1612" height="865" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17558299" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33152175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14239691" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16791044" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1320,9 +281,11 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1342,6 +305,42 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bstrctlmnt/mail/PingNotification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ping-service-confluence.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bstrctlmnt/job/PingJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1448,18 +447,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/atlassian-plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="64" lean-forward="true" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ping-service-confluence.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ping-service-confluence.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1474,23 +473,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/atlassian-plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        <state relative-caret-position="391">
+          <caret line="23" column="64" lean-forward="false" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bstrctlmnt/job/PingJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        <state relative-caret-position="697">
+          <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ping-service-confluence</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
