@@ -31,9 +31,7 @@ public class PluginDataServiceImpl implements PluginDataService {
         Set<String> spaces = new HashSet<>();
         ao.executeInTransaction((TransactionCallback<Void>) () -> {
             for (AffectedSpaces affectedSpace : ao.find(AffectedSpaces.class))
-            {
-                if (affectedSpace.getAffectedSpaceKey() != null)  spaces.add(affectedSpace.getAffectedSpaceKey());
-            }
+                spaces.add(affectedSpace.getAffectedSpaceKey());
             return null;
         });
         return spaces;
@@ -54,9 +52,7 @@ public class PluginDataServiceImpl implements PluginDataService {
         Set<String> groups = new HashSet<>();
         ao.executeInTransaction((TransactionCallback<Void>) () -> {
             for (AffectedGroups affectedGroups : ao.find(AffectedGroups.class))
-            {
-                if (affectedGroups.getAffectedGroup() != null)  groups.add(affectedGroups.getAffectedGroup());
-            }
+                groups.add(affectedGroups.getAffectedGroup());
             return null;
         });
         return groups;
