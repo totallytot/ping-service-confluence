@@ -1,9 +1,6 @@
 package com.bstrctlmnt.servlet;
 
-import com.atlassian.activeobjects.external.ActiveObjects;
-import com.atlassian.confluence.setup.settings.SettingsManager;
 import com.atlassian.confluence.spaces.SpaceManager;
-import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
 import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
@@ -17,7 +14,7 @@ import com.atlassian.user.EntityException;
 import com.atlassian.user.GroupManager;
 import com.bstrctlmnt.ao.AffectedGroups;
 import com.bstrctlmnt.ao.AffectedSpaces;
-import com.bstrctlmnt.ao.PluginData;
+import com.bstrctlmnt.ao.PluginDataService;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -32,14 +29,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 @Scanned
-public class Configuration extends HttpServlet implements PluginData {
+public class Configuration extends HttpServlet {
 
     public static final String PLUGIN_STORAGE_KEY = "com.bstrctlmnt.servlet";
-    @ComponentImport
-    private final ActiveObjects ao;
+    private final PluginDataService pluginDataService;
+
     @ComponentImport
     private final LoginUriProvider loginUriProvider;
     @ComponentImport
@@ -54,16 +49,17 @@ public class Configuration extends HttpServlet implements PluginData {
     private final PluginSettingsFactory pluginSettingsFactory;
 
     @Inject
-    public Configuration(UserManager userManager, ActiveObjects ao, LoginUriProvider loginUriProvider,
+    public Configuration(UserManager userManager, LoginUriProvider loginUriProvider,
                          TemplateRenderer renderer, SpaceManager spaceManager, GroupManager groupManager,
-                         PluginSettingsFactory pluginSettingsFactory) {
+                         PluginSettingsFactory pluginSettingsFactory, PluginDataService pluginDataService)
+    {
         this.userManager = userManager;
-        this.ao = checkNotNull(ao);
         this.loginUriProvider = loginUriProvider;
         this.renderer = renderer;
         this.spaceManager = spaceManager;
         this.groupManager = groupManager;
         this.pluginSettingsFactory = pluginSettingsFactory;
+        this.pluginDataService = pluginDataService;
     }
 
     private void redirectToLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -117,7 +113,10 @@ public class Configuration extends HttpServlet implements PluginData {
         pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", timeframe);
 
         //add space key to DB
-        if (spaceManager.getSpace(affectedSpaceKey) != null && !getPublicSpacesFromAO(ao).contains(affectedSpaceKey) && !affectedSpaceKey.equals(spaceKeyToRemove)) {
+        if (spaceManager.getSpace(affectedSpaceKey) != null && !pluginDataService.getAffectedSpaces().contains(affectedSpaceKey) && !affectedSpaceKey.equals(spaceKeyToRemove)) {
+            pluginDataService.addAffectedSpace(affectedSpaceKey);
+
+            /*
             ao.executeInTransaction(new TransactionCallback<AffectedSpaces>() {
                 @Override
                 public AffectedSpaces doInTransaction() {
@@ -127,10 +126,12 @@ public class Configuration extends HttpServlet implements PluginData {
                     return affectedSpaces;
                 }
             });
+            */
         }
 
         //remove space key
-        if (getPublicSpacesFromAO(ao).contains(spaceKeyToRemove) && !spaceKeyToRemove.equals(affectedSpaceKey)) {
+        if (pluginDataService.getAffectedSpaces().contains(spaceKeyToRemove) && !spaceKeyToRemove.equals(affectedSpaceKey)) {
+           /*
             ao.executeInTransaction(new TransactionCallback<AffectedSpaces>() {
                 @Override
                 public AffectedSpaces doInTransaction() {
@@ -145,13 +146,17 @@ public class Configuration extends HttpServlet implements PluginData {
                     affectedSpaces.save();
                     return affectedSpaces;
                 }
-            });
+            }); */
         }
 
         //add affected group
         try {
-            if (groupManager.getGroup(affectedGroup) != null && !affectedGroup.equals(groupToRemove) && !getGroupsFromAO(ao).contains(affectedGroup)) {
-                ao.executeInTransaction(new TransactionCallback<AffectedGroups>() {
+
+            if (groupManager.getGroup(affectedGroup) != null && !affectedGroup.equals(groupToRemove) && !pluginDataService.getAffectedGroups().contains(affectedGroup)) {
+                pluginDataService.addAffectedGroup(affectedGroup);
+            }
+
+                /*ao.executeInTransaction(new TransactionCallback<AffectedGroups>() {
                     @Override
                     public AffectedGroups doInTransaction() {
                         final AffectedGroups affectedGroups = ao.create(AffectedGroups.class);
@@ -159,15 +164,15 @@ public class Configuration extends HttpServlet implements PluginData {
                         affectedGroups.save();
                         return affectedGroups;
                     }
-                });
-            }
+                }); */
+
         } catch (EntityException e) {
             e.printStackTrace();
         }
 
         //remove group
-        if (!groupToRemove.equals(affectedGroup) && getGroupsFromAO(ao).contains(groupToRemove)) {
-            ao.executeInTransaction(new TransactionCallback<AffectedGroups>() {
+        if (!groupToRemove.equals(affectedGroup) && pluginDataService.getAffectedGroups().contains(groupToRemove)) {
+            /*ao.executeInTransaction(new TransactionCallback<AffectedGroups>() {
                 @Override
                 public AffectedGroups doInTransaction() {
                     final AffectedGroups affectedGroups = ao.create(AffectedGroups.class);
@@ -181,7 +186,7 @@ public class Configuration extends HttpServlet implements PluginData {
                     affectedGroups.save();
                     return affectedGroups;
                 }
-            });
+            });*/
         }
 
         Map<String, Object> context = new HashMap<>();
@@ -194,7 +199,7 @@ public class Configuration extends HttpServlet implements PluginData {
 
         private String getAffectedGroupsAsString() {
             String [] result = {""};
-            Set<String> groups = getGroupsFromAO(ao);
+            Set<String> groups = pluginDataService.getAffectedGroups();
             if (groups.size() < 1) {
                 return "No Affected Groups";
             }
@@ -206,7 +211,7 @@ public class Configuration extends HttpServlet implements PluginData {
 
         private String getAffectedSpacesAsString() {
             String [] result = {""};
-            Set<String> spaces = getPublicSpacesFromAO(ao);
+            Set<String> spaces = pluginDataService.getAffectedSpaces();
             if (spaces.size() < 1) {
                 return "No Affected Spaces";
             }

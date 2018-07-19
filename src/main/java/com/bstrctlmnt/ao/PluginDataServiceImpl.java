@@ -6,12 +6,14 @@ import com.atlassian.sal.api.transaction.TransactionCallback;
 import java.util.HashSet;
 import java.util.Set;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 public class PluginDataServiceImpl implements PluginDataService {
 
     private final ActiveObjects ao;
 
     public PluginDataServiceImpl(ActiveObjects ao) {
-        this.ao = ao;
+        this.ao = checkNotNull(ao);
     }
 
     @Override

@@ -29,6 +29,10 @@
         <entity>com.bstrctlmnt.ao.AffectedGroups</entity>
     </ao>
 
+    <component key="plugin-data-service" name="Plugin Data Service" class="com.bstrctlmnt.ao.PluginDataServiceImpl">
+        <interface>com.bstrctlmnt.ao.PluginDataService</interface>
+    </component>
+
     <servlet name="Configuration Servlet" i18n-name-key="configuration-servlet.name" key="configuration-servlet"
              class="com.bstrctlmnt.servlet.Configuration">
         <description key="configuration-servlet.description">Plugin Configuration Servlet</description>
