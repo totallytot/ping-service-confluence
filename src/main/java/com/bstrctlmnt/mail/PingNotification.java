@@ -6,8 +6,13 @@ import com.atlassian.mail.server.MailServerManager;
 import com.atlassian.mail.server.SMTPMailServer;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 import com.atlassian.spring.container.ContainerManager;
+import org.apache.log4j.Logger;
+
 
 public class PingNotification {
+
+    private static final Logger log = Logger.getLogger(PingNotification.class);
+
     @ComponentImport
     private final MailServerManager mailServerManager;
 
@@ -30,7 +35,7 @@ public class PingNotification {
                 smtpMailServer.send(email);
 
             } catch (MailException e) {
-                e.printStackTrace();
+                log.error(e.getMessage(), e);
             }
         }
         else {

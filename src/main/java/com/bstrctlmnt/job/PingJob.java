@@ -1,6 +1,5 @@
 package com.bstrctlmnt.job;
 
-import com.atlassian.activeobjects.external.ActiveObjects;
 import com.atlassian.confluence.pages.Page;
 import com.atlassian.confluence.pages.PageManager;
 import com.atlassian.confluence.setup.settings.SettingsManager;
@@ -11,12 +10,11 @@ import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
 import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
-import com.atlassian.sal.api.transaction.TransactionCallback;
 import com.atlassian.sal.api.transaction.TransactionTemplate;
 import com.atlassian.scheduler.JobRunner;
 import com.atlassian.scheduler.JobRunnerRequest;
 import com.atlassian.scheduler.JobRunnerResponse;
-import com.bstrctlmnt.ao.PluginData;
+import com.bstrctlmnt.ao.PluginDataService;
 import com.bstrctlmnt.mail.PingNotification;
 import com.bstrctlmnt.servlet.Configuration;
 import com.google.common.collect.ArrayListMultimap;
@@ -31,10 +29,10 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.*;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 @Component
-public class PingJob implements JobRunner, PluginData {
+public class PingJob implements JobRunner {
+
+    private final PluginDataService pluginDataService;
 
     @ComponentImport
     private final PageManager pageManager;
@@ -45,8 +43,6 @@ public class PingJob implements JobRunner, PluginData {
     @ComponentImport
     private final PluginSettingsFactory pluginSettingsFactory;
     @ComponentImport
-    private final ActiveObjects ao;
-    @ComponentImport
     private final UserManager userManager;
     @ComponentImport
     private final SettingsManager settingsManager;
@@ -55,15 +51,15 @@ public class PingJob implements JobRunner, PluginData {
 
     @Autowired
     public PingJob(PageManager pageManager, SpaceManager spaceManager, TransactionTemplate transactionTemplate, PluginSettingsFactory pluginSettingsFactory,
-                   ActiveObjects ao, UserManager userManager, SettingsManager settingsManager, UserAccessor userAccessor) {
+                   UserManager userManager, SettingsManager settingsManager, UserAccessor userAccessor, PluginDataService pluginDataService) {
         this.pageManager = pageManager;
         this.spaceManager = spaceManager;
         this.transactionTemplate = transactionTemplate;
         this.pluginSettingsFactory = pluginSettingsFactory;
         this.userManager = userManager;
-        this.ao = checkNotNull(ao);
         this.settingsManager = settingsManager;
         this.userAccessor = userAccessor;
+        this.pluginDataService = pluginDataService;
     }
 
     @Override
@@ -72,45 +68,37 @@ public class PingJob implements JobRunner, PluginData {
             return JobRunnerResponse.aborted("Job cancelled.");
         }
 
-        transactionTemplate.execute(new TransactionCallback() {
-            @Override
-            public Void doInTransaction() {
-                //job
-                PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
-                long timeframe = Long.parseLong((String) pluginSettings.get(Configuration.PLUGIN_STORAGE_KEY + ".timeframe"));
+        transactionTemplate.execute(() -> {
+            //job
+            PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
+            long timeframe = Long.parseLong((String) pluginSettings.get(Configuration.PLUGIN_STORAGE_KEY + ".timeframe"));
 
-                Set<String> affectedSpaces = getPublicSpacesFromAO(ao);
-                Set<String> groups = getGroupsFromAO(ao);
+            Set<String> affectedSpaces = pluginDataService.getAffectedSpaces();
+            Set<String> groups = pluginDataService.getAffectedGroups();
+            LocalDateTime now = LocalDateTime.now();
 
-                LocalDateTime now = LocalDateTime.now();
+            if (timeframe != 0 && affectedSpaces != null && groups != null && affectedSpaces.size() > 0 && groups.size() > 0)
+            {
+                Multimap<ConfluenceUser, Page> multiMap = ArrayListMultimap.create();
 
-                if (timeframe != 0 && affectedSpaces != null && groups != null && affectedSpaces.size() > 0 && groups.size() > 0) {
-                    Multimap<ConfluenceUser, Page> multiMap = ArrayListMultimap.create();
+                affectedSpaces.forEach(spaceStr -> {
+                    Space space = spaceManager.getSpace(spaceStr);
+                    List<Page> pages = pageManager.getPages(space, true);
 
-                    affectedSpaces.forEach(spaceStr -> {
-                        Space space = spaceManager.getSpace(spaceStr);
-                        List<Page> pages = pageManager.getPages(space, true);
+                    pages.forEach(page -> {
+                        Instant instant = Instant.ofEpochMilli(page.getLastModificationDate().getTime());
+                        LocalDateTime pageLastUpdateDate = LocalDateTime.ofInstant(instant, ZoneOffset.UTC);
+                        Duration deltaTime = Duration.between(pageLastUpdateDate, now);
+                        long delta = deltaTime.toDays();
 
-                        pages.forEach(page -> {
-
-                            Instant instant = Instant.ofEpochMilli(page.getLastModificationDate().getTime());
-                            LocalDateTime pageLastUpdateDate = LocalDateTime.ofInstant(instant, ZoneOffset.UTC);
-                            Duration deltaTime = Duration.between(pageLastUpdateDate, now);
-                            //long delta = deltaTime.toHours();
-                            long delta = deltaTime.toDays();
-
-                            ConfluenceUser creator = page.getCreator();
-
-                            if (creator != null && delta > timeframe && !userAccessor.isDeactivated(creator) && checkUserMembership(creator, groups)) {
-                                multiMap.put(creator, page);
-                            }
-                        });
+                        ConfluenceUser creator = page.getCreator();
+                        if (creator != null && delta > timeframe && !userAccessor.isDeactivated(creator) && checkUserMembership(creator, groups))
+                            multiMap.put(creator, page);
                     });
-
-                    createNotificationAndSendEmail(multiMap, timeframe);
-                }
-                return null;
+                });
+                createNotificationAndSendEmail(multiMap, timeframe);
             }
+            return null;
         });
         return JobRunnerResponse.success("Job finished successfully.");
     }
