@@ -1,17 +1,25 @@
 package com.bstrctlmnt.ao;
 
 import com.atlassian.activeobjects.external.ActiveObjects;
+import com.atlassian.plugin.spring.scanner.annotation.export.ExportAsService;
+import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 import com.atlassian.sal.api.transaction.TransactionCallback;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.HashSet;
 import java.util.Set;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+@ExportAsService({PluginDataService.class})
+@Named("pluginDataService")
 public class PluginDataServiceImpl implements PluginDataService {
 
+    @ComponentImport
     private final ActiveObjects ao;
 
+    @Inject
     public PluginDataServiceImpl(ActiveObjects ao) {
         this.ao = checkNotNull(ao);
     }
