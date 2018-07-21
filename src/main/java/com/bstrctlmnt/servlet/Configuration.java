@@ -14,7 +14,6 @@ import com.atlassian.user.EntityException;
 import com.atlassian.user.Group;
 import com.atlassian.user.GroupManager;
 import com.bstrctlmnt.ao.PluginDataService;
-import com.bstrctlmnt.mail.PingNotification;
 import org.apache.log4j.Logger;
 
 import javax.inject.Inject;
@@ -99,7 +98,6 @@ public class Configuration extends HttpServlet {
         resp.setContentType("text/html;charset=utf-8");
         Map<String, Object> context = new HashMap<>();
         context.put("allSpaceKeys", spaceManager.getAllSpaceKeys(SpaceStatus.CURRENT));
-        //context.put("allSpaceKeys", spaceManager.getAllSpaces());
         context.put("allGroups", allGroups);
         context.put("affectedSpaces", getAffectedSpacesAsString());
         context.put("affectedGroups", getAffectedGroupsAsString());
