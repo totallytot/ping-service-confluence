@@ -13,7 +13,6 @@ import com.atlassian.sal.api.user.UserProfile;
 import com.atlassian.user.EntityException;
 import com.atlassian.user.Group;
 import com.atlassian.user.GroupManager;
-import com.atlassian.user.search.page.Pager;
 import com.bstrctlmnt.ao.PluginDataService;
 import com.bstrctlmnt.mail.PingNotification;
 import org.apache.log4j.Logger;

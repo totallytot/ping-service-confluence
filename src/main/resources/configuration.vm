@@ -11,7 +11,7 @@
                 <label for="name">Select space key to be monitored:</label>
                 <select class="multi-select" multiple="multiple" size="8" name="allSpaceKeys" id="allSpaceKeys">
                         #foreach($space in $allSpaceKeys)
-                            <option value=$space>
+                            <option value="$space">$space</option>
                         #end
                     </select>
             </div>
@@ -20,7 +20,7 @@
                 <label for="name">Select affected groups:</label>
                 <select class="multi-select" multiple="multiple" size="8" name="allGroups" id="allGroups">
                     #foreach($group in $allGroups)
-                        <option value="$issueType.get('name')">
+                        <option value="$group.get('name')">$group</option>>
                     #end
                 </select>
             </div>
