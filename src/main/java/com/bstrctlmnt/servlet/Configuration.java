@@ -30,7 +30,7 @@ import java.util.*;
 @Scanned
 public class Configuration extends HttpServlet {
 
-    private static final Logger log = Logger.getLogger(PingNotification.class);
+    private static final Logger log = Logger.getLogger(Configuration.class);
     public static final String PLUGIN_STORAGE_KEY = "com.bstrctlmnt.servlet";
 
     private final PluginDataService pluginDataService;
