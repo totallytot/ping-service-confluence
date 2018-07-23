@@ -99,8 +99,8 @@ public class Configuration extends HttpServlet {
         Map<String, Object> context = new HashMap<>();
         context.put("allSpaceKeys", spaceManager.getAllSpaceKeys(SpaceStatus.CURRENT));
         context.put("allGroups", allGroups);
-        context.put("affectedSpaces", getAffectedSpacesAsString());
-        context.put("affectedGroups", getAffectedGroupsAsString());
+        context.put("affectedSpaces", pluginDataService.getAffectedSpacesAsString());
+        context.put("affectedGroups", pluginDataService.getAffectedGroupsAsString());
         context.put("timeframe", pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe"));
         renderer.render("configuration.vm", context, resp.getWriter());
         resp.getWriter().close();
@@ -134,33 +134,11 @@ public class Configuration extends HttpServlet {
         }
 
         Map<String, Object> context = new HashMap<>();
-        context.put("affectedSpaces", getAffectedSpacesAsString());
-        context.put("affectedGroups", getAffectedGroupsAsString());
+        context.put("affectedSpaces", pluginDataService.getAffectedSpacesAsString());
+        context.put("affectedGroups", pluginDataService.getAffectedGroupsAsString());
         context.put("timeframe", pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe"));
         renderer.render("configuration.vm", context, resp.getWriter());
         resp.getWriter().close();
-    }
-
-    private String getAffectedGroupsAsString() {
-        String[] result = {""};
-        Set<String> groups = pluginDataService.getAffectedGroups();
-        if (groups.size() < 1) {
-            return "No Affected Groups";
-        } else {
-            groups.forEach(s -> result[0] += s + ", ");
-            return result[0].substring(0, result[0].length() - 2);
-        }
-    }
-
-    private String getAffectedSpacesAsString() {
-        String[] result = {""};
-        Set<String> spaces = pluginDataService.getAffectedSpaces();
-        if (spaces.size() < 1) {
-            return "No Affected Spaces";
-        } else {
-            spaces.forEach(s -> result[0] += s + ", ");
-            return result[0].substring(0, result[0].length() - 2);
-        }
     }
 }
 

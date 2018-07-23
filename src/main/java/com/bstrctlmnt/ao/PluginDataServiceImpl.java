@@ -46,6 +46,18 @@ public class PluginDataServiceImpl implements PluginDataService {
     }
 
     @Override
+    public String getAffectedSpacesAsString() {
+        String[] result = {""};
+        Set<String> spaces = getAffectedSpaces();
+        if (spaces.size() < 1) {
+            return "No Affected Spaces";
+        } else {
+            spaces.forEach(s -> result[0] += s + ", ");
+            return result[0].substring(0, result[0].length() - 2);
+        }
+    }
+
+    @Override
     public void addAffectedGroup(String group) {
         ao.executeInTransaction(() -> {
             final AffectedGroups affectedGroups = ao.create(AffectedGroups.class);
@@ -64,5 +76,17 @@ public class PluginDataServiceImpl implements PluginDataService {
             return null;
         });
         return groups;
+    }
+
+    @Override
+    public String getAffectedGroupsAsString() {
+        String[] result = {""};
+        Set<String> groups = getAffectedGroups();
+        if (groups.size() < 1) {
+            return "No Affected Groups";
+        } else {
+            groups.forEach(s -> result[0] += s + ", ");
+            return result[0].substring(0, result[0].length() - 2);
+        }
     }
 }

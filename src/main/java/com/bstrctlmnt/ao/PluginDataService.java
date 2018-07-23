@@ -8,8 +8,12 @@ public interface PluginDataService {
 
     Set<String> getAffectedSpaces();
 
+    String getAffectedSpacesAsString();
+
     void addAffectedGroup(String group);
 
     Set<String> getAffectedGroups();
+
+    String getAffectedGroupsAsString();
 
 }
