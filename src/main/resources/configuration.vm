@@ -27,7 +27,7 @@
 
             <div class="field-group">
                 <label for="name">Period to consider pages as outdated (day(s)):</label>
-                <input type="number" min="1" id="timeframe" name="timeframe" class="text">
+                <input type="number" min="0" id="timeframe" name="timeframe" class="text">
             </div>
 
             <div class="field-group">
