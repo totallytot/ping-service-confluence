@@ -99,8 +99,8 @@ public class Configuration extends HttpServlet {
         Map<String, Object> context = new HashMap<>();
         context.put("allSpaceKeys", spaceManager.getAllSpaceKeys(SpaceStatus.CURRENT));
         context.put("allGroups", allGroups);
-        context.put("affectedSpaces", pluginDataService.getAffectedSpacesAsString());
-        context.put("affectedGroups", pluginDataService.getAffectedGroupsAsString());
+        context.put("affectedSpaces", pluginDataService.getAffectedSpaces());
+        context.put("affectedGroups", pluginDataService.getAffectedGroups());
         context.put("timeframe", pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe"));
         renderer.render("configuration.vm", context, resp.getWriter());
         resp.getWriter().close();
@@ -134,8 +134,8 @@ public class Configuration extends HttpServlet {
         }
 
         Map<String, Object> context = new HashMap<>();
-        context.put("affectedSpaces", pluginDataService.getAffectedSpacesAsString());
-        context.put("affectedGroups", pluginDataService.getAffectedGroupsAsString());
+        context.put("affectedSpaces", pluginDataService.getAffectedSpaces());
+        context.put("affectedGroups", pluginDataService.getAffectedGroups());
         context.put("timeframe", pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe"));
         renderer.render("configuration.vm", context, resp.getWriter());
         resp.getWriter().close();

@@ -13,8 +13,11 @@
     <!-- add our web resources -->
     <web-resource key="ping-service-confluence-resources" name="ping-service-confluence Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <dependency>com.atlassian.auiplugin:aui-select2</dependency>
+        <resource type="download" name="ping-service.js" location="/js/ping-service.js"/>
         <resource type="download" name="images/" location="/images"/>
-        <context>ping-service-confluence</context>
+        <!--<context>ping-service-confluence</context>-->
+        <context>atl.admin</context>
     </web-resource>
 
     <job-config name="Old Pages Review Service" key="pingJobConfig">

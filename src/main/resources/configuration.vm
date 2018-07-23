@@ -6,62 +6,54 @@
     </head>
     <body>
         <form id="admin" class="aui" action="" method="POST">
-
             <div class="field-group">
-                <label for="name">Select space key to be monitored:</label>
-                <select class="multi-select" multiple="multiple" size="8" name="allSpaceKeys" id="allSpaceKeys">
-                        #foreach($space in $allSpaceKeys)
-                            <option value="$space">$space</option>
+                <label for="allSpaceKeys">Select space keys to be monitored:</label>
+                <select class="multi-select" multiple="multiple" size="8" id="allSpaceKeys">
+                        #foreach($spaceKey in $allSpaceKeys)
+                            <option value="$spaceKey"
+                                #if ($affectedSpaces.contains($spaceKey)) selected #end>$spaceKey</option>
                         #end
-                    </select>
+                </select>
             </div>
-
             <div class="field-group">
-                <label for="name">Select affected groups:</label>
-                <select class="multi-select" multiple="multiple" size="8" name="allGroups" id="allGroups">
+                <label for="allGroups">Select affected groups:</label>
+                <select class="multi-select" multiple="multiple" size="8" id="allGroups">
                     #foreach($group in $allGroups)
-                        <option value="$group.get('name')">$group</option>>
+                        <option value="$group.get('name')"
+                            #if ($affectedGroups.contains($group)) selected #end>$group</option>>
                     #end
                 </select>
             </div>
-
             <div class="field-group">
-                <label for="name">Period to consider pages as outdated (day(s)):</label>
-                <input type="number" min="0" id="timeframe" name="timeframe" class="text">
+                <input type="number" min="0" id="timeframe" class="text">
+                <label for="timeframe">Period to consider pages as outdated (day(s)):</label>
             </div>
-
             <div class="field-group">
                 <input type="submit" value="Save" class="button">
             </div>
+        </form>
             <br>
             <div class="view">
-                <label for="name">Monitored space keys:</label>
-                <div class="field-value">
-                    $!affectedSpaces
-                </div>
+                <label for="monitored-space-keys"><strong>Monitored space keys:</strong> </label>
+                    #foreach($space in $affectedSpaces)
+                        $!space |
+                    #end
             </div>
-
             <div class="view">
-                <label for="name">Affected user groups:</label>
-                <div class="field-value">
-                    $!affectedGroups
-                </div>
+                <label for="name"><strong>Affected user groups:</strong> </label>
+                    #foreach($group in $affectedGroups)
+                        $!group |
+                    #end
             </div>
-
             <div class="view">
-                <label for="name">Period to consider pages as outdated (day(s)):</label>
-                <div class="field-value">
+                <label for="field-value"><strong>Period to consider pages as outdated (day(s)):</strong> </label>
                     $!timeframe
-                </div>
             </div>
-
             <div class="Info">
                 <br>
                 <strong>Configuration:</strong> visit Administration - Scheduled Jobs in order to set time interval for running job or to run it manually<br>
                 <strong>Default schedule:</strong> each day at 00:00:00<br>
                 <strong>Job:</strong> Old Pages Review Job<br>
             </div>
-
-        </form>
     </body>
 </html>
