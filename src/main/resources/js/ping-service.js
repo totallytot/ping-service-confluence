@@ -4,7 +4,7 @@ AJS.$(document).ready(function () {
 
     var monitoredSpaceKeys = AJS.$("#monitoredSpaceKeys").val();
     var affectedGroups = AJS.$("#affectedGroups").val();
-    var timeframe = AJS.$("#affectedGroups").val();
+    var timeframe = AJS.$("#timeframe").val();
 
     AJS.$.ajax({
         url: AJS.contextPath() + '/plugins/servlet/pagesreview',
