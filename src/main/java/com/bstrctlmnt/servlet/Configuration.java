@@ -2,6 +2,7 @@ package com.bstrctlmnt.servlet;
 
 import com.atlassian.confluence.spaces.SpaceManager;
 import com.atlassian.confluence.spaces.SpaceStatus;
+import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
 import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
@@ -45,9 +46,13 @@ public class Configuration extends HttpServlet {
     private final GroupManager groupManager;
     @ComponentImport
     private final PluginSettingsFactory pluginSettingsFactory;
+    @ComponentImport
+    private final UserAccessor userAccessor;
+
+
 
     @Inject
-    public Configuration(UserManager userManager, LoginUriProvider loginUriProvider,
+    public Configuration(UserManager userManager, LoginUriProvider loginUriProvider, UserAccessor userAccessor,
                          TemplateRenderer renderer, SpaceManager spaceManager, GroupManager groupManager,
                          PluginSettingsFactory pluginSettingsFactory, PluginDataService pluginDataService) {
         this.userManager = userManager;
@@ -57,6 +62,7 @@ public class Configuration extends HttpServlet {
         this.groupManager = groupManager;
         this.pluginSettingsFactory = pluginSettingsFactory;
         this.pluginDataService = pluginDataService;
+        this.userAccessor = userAccessor;
     }
 
     private void redirectToLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -88,12 +94,16 @@ public class Configuration extends HttpServlet {
             pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", noTimeframe);
         }
 
+        /*
         List<Group> allGroups = new ArrayList<>();
         try {
             allGroups = groupManager.getGroups().getCurrentPage();
         } catch (EntityException e) {
             log.error(e.getMessage(), e);
         }
+        */
+
+        List<Group> allGroups = userAccessor.getGroupsAsList();
 
         resp.setContentType("text/html;charset=utf-8");
         Map<String, Object> context = new HashMap<>();
