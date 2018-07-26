@@ -12,11 +12,11 @@ import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 import com.atlassian.sal.api.auth.LoginUriProvider;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.sal.api.user.UserProfile;
-import com.atlassian.user.EntityException;
 import com.atlassian.user.Group;
 import com.atlassian.user.GroupManager;
 import com.bstrctlmnt.ao.PluginDataService;
 import org.apache.log4j.Logger;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -109,46 +109,42 @@ public class Configuration extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        /*  req body
+
+
+        /*  req body should be:
         {
           "spaceKeys": ["spacekey", "spacekey1"],
           "groups": ["group", "group1"],
           "timeframe": "1"
          }*/
-
-        //get request body from http request
         String jsonString = req.getReader().lines().collect(Collectors.joining());
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println(jsonString);
+
+        jsonString = jsonString.substring(jsonString.indexOf('{'));
+
 
         //get data from json
         JSONObject jsonObject = new JSONObject(jsonString);
-        String[] spaces = (String[]) jsonObject.get("spaceKeys");
-        String[] groups = (String[]) jsonObject.get("groups");
         int timeframe = jsonObject.getInt("timeframe");
 
-        /*
-        //add space key to DB
-        if (spaceManager.getSpace(affectedSpaceKey) != null && !pluginDataService.getAffectedSpaces().contains(affectedSpaceKey) && !affectedSpaceKey.equals(spaceKeyToRemove)) {
-            pluginDataService.addAffectedSpace(affectedSpaceKey);
-        }
-        //add affected group
-        try {
-            if (groupManager.getGroup(affectedGroup) != null && !affectedGroup.equals(groupToRemove) && !pluginDataService.getAffectedGroups().contains(affectedGroup)) {
-                pluginDataService.addAffectedGroup(affectedGroup);
-            }
-        } catch (EntityException e) {
-            log.error(e.getMessage(), e);
-        }*/
 
+        //update DB here via plunging manager or service
         //add timeframe
-        PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
-        pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", timeframe);
+        //PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
+        //pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", timeframe);
 
-        Map<String, Object> context = new HashMap<>();
-        context.put("affectedSpaces", pluginDataService.getAffectedSpaces());
-        context.put("affectedGroups", pluginDataService.getAffectedGroups());
-        context.put("timeframe", pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe"));
-        renderer.render("configuration.vm", context, resp.getWriter());
-        resp.getWriter().close();
+        //make response in JSON
+        resp.setContentType("application/json");
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(resp.getWriter(), jsonObject);
+
+        //Map<String, Object> context = new HashMap<>();
+        //context.put("affectedSpaces", pluginDataService.getAffectedSpaces());
+        //context.put("affectedGroups", pluginDataService.getAffectedGroups());
+        //context.put("timeframe", pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe"));
+        //renderer.render("configuration.vm", context, resp.getWriter());
+        //resp.getWriter().close();
     }
 }
 

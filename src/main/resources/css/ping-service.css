@@ -1,3 +1,6 @@
 .field-group{
    max-width: 50%;
 }
+#timeframe{
+   max-width: 50px;
+}
