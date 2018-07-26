@@ -3,7 +3,6 @@ package com.bstrctlmnt.servlet;
 import com.atlassian.confluence.spaces.SpaceManager;
 import com.atlassian.confluence.spaces.SpaceStatus;
 import com.atlassian.confluence.user.UserAccessor;
-import com.atlassian.json.jsonorg.JSONObject;
 import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
 import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
@@ -15,8 +14,9 @@ import com.atlassian.sal.api.user.UserProfile;
 import com.atlassian.user.Group;
 import com.atlassian.user.GroupManager;
 import com.bstrctlmnt.ao.PluginDataService;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -110,41 +110,18 @@ public class Configuration extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-        /*  req body should be:
-        {
-          "spaceKeys": ["spacekey", "spacekey1"],
-          "groups": ["group", "group1"],
-          "timeframe": "1"
-         }*/
         String jsonString = req.getReader().lines().collect(Collectors.joining());
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        System.out.println(jsonString);
 
-        jsonString = jsonString.substring(jsonString.indexOf('{'));
-
-
-        //get data from json
-        JSONObject jsonObject = new JSONObject(jsonString);
-        int timeframe = jsonObject.getInt("timeframe");
-
-
-        //update DB here via plunging manager or service
-        //add timeframe
+        //update DB here via plunging manager or service + add timeframe
         //PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
         //pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", timeframe);
 
         //make response in JSON
-        resp.setContentType("application/json");
         ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(resp.getWriter(), jsonObject);
-
-        //Map<String, Object> context = new HashMap<>();
-        //context.put("affectedSpaces", pluginDataService.getAffectedSpaces());
-        //context.put("affectedGroups", pluginDataService.getAffectedGroups());
-        //context.put("timeframe", pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe"));
-        //renderer.render("configuration.vm", context, resp.getWriter());
-        //resp.getWriter().close();
+        JsonDataObject jsonDataObject = mapper.readValue(jsonString, JsonDataObject.class);
+        resp.setContentType("application/json");
+        mapper.writeValue(resp.getWriter(), jsonDataObject);
+        resp.getWriter().close();
     }
 }
 
