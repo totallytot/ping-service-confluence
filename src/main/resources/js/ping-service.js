@@ -3,13 +3,6 @@ AJS.$(document).ready(function () {
 });
 
 function sendAjax() {
-
-    /*
-    var monitoredSpaceKeys = AJS.$("#monitoredSpaceKeys").val();
-    var affectedGroups = AJS.$("#affectedGroups").val();
-    var timeframe = AJS.$("#timeframe").val();
-    */
-
     var dataObject = new Object();
     dataObject.keys = AJS.$("#monitoredSpaceKeys").val();
     dataObject.groups = AJS.$("#affectedGroups").val();
@@ -23,28 +16,13 @@ function sendAjax() {
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(dataObject),
-            //{
-            //spaceKeys: monitoredSpaceKeys,
-            //groups: affectedGroups,
-            //timeframe: timeframe
-        //},
         success: function (resp) {
             console.log(resp);
-
         },
-
         error: function(err) {
-            console.log("ERROOOR");
+            console.log("ERROR");
             console.log(err);
         }
-
-        /*
-        error: function (data, status , er) {
-            console.log("ERROOOR");
-            alert("error: " + data + " status: " + status + " er:" + er);
-            console.log(er);
-        }
-        */
     });
 }
 

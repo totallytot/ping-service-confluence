@@ -12,7 +12,6 @@ import com.atlassian.sal.api.auth.LoginUriProvider;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.sal.api.user.UserProfile;
 import com.atlassian.user.Group;
-import com.atlassian.user.GroupManager;
 import com.bstrctlmnt.ao.PluginDataService;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -45,21 +44,17 @@ public class Configuration extends HttpServlet {
     @ComponentImport
     private final SpaceManager spaceManager;
     @ComponentImport
-    private final GroupManager groupManager;
-    @ComponentImport
     private final PluginSettingsFactory pluginSettingsFactory;
     @ComponentImport
     private final UserAccessor userAccessor;
 
     @Inject
-    public Configuration(UserManager userManager, LoginUriProvider loginUriProvider, UserAccessor userAccessor,
-                         TemplateRenderer renderer, SpaceManager spaceManager, GroupManager groupManager,
-                         PluginSettingsFactory pluginSettingsFactory, PluginDataService pluginDataService) {
+    public Configuration(UserManager userManager, LoginUriProvider loginUriProvider, UserAccessor userAccessor, TemplateRenderer renderer,
+                         SpaceManager spaceManager, PluginSettingsFactory pluginSettingsFactory, PluginDataService pluginDataService) {
         this.userManager = userManager;
         this.loginUriProvider = loginUriProvider;
         this.renderer = renderer;
         this.spaceManager = spaceManager;
-        this.groupManager = groupManager;
         this.pluginSettingsFactory = pluginSettingsFactory;
         this.pluginDataService = pluginDataService;
         this.userAccessor = userAccessor;
@@ -116,7 +111,7 @@ public class Configuration extends HttpServlet {
         //PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
         //pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", timeframe);
 
-        //make response in JSON
+        //Send response w/t body with status 200 if DB was successfully updated, or 500 in case of errors
         ObjectMapper mapper = new ObjectMapper();
         JsonDataObject jsonDataObject = mapper.readValue(jsonString, JsonDataObject.class);
         resp.setContentType("application/json");
