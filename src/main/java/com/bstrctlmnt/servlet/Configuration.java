@@ -3,7 +3,6 @@ package com.bstrctlmnt.servlet;
 import com.atlassian.confluence.spaces.SpaceManager;
 import com.atlassian.confluence.spaces.SpaceStatus;
 import com.atlassian.confluence.user.UserAccessor;
-
 import com.atlassian.json.jsonorg.JSONObject;
 import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
@@ -94,15 +93,6 @@ public class Configuration extends HttpServlet {
             String noTimeframe = "0";
             pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", noTimeframe);
         }
-
-        /*
-        List<Group> allGroups = new ArrayList<>();
-        try {
-            allGroups = groupManager.getGroups().getCurrentPage();
-        } catch (EntityException e) {
-            log.error(e.getMessage(), e);
-        }
-        */
 
         List<Group> allGroups = userAccessor.getGroupsAsList();
 

@@ -29,10 +29,14 @@
                 <label for="timeframe">Period to consider pages as outdated (day(s)):</label>
             </div>
             <div class="field-group">
-                <input type="submit" value="Save" class="button">
+                <input type="submit" value="Save" class="button" id="save-button" onclick="sendAjax()">
+            </div>
+
+            <div>
+            <p><button class="btn" type="button" onclick="sendAjax()">Ajax</button></p>
             </div>
         </form>
-            <br>
+
             <div class="view">
                 <label for="monitored-space-keys"><strong>Monitored space keys:</strong> </label>
                     #foreach($space in $affectedSpaces)

@@ -1,6 +1,8 @@
 AJS.$(document).ready(function () {
-
     AJS.$(".multi-select").auiSelect2();
+});
+
+function sendAjax() {
 
     var monitoredSpaceKeys = AJS.$("#monitoredSpaceKeys").val();
     var affectedGroups = AJS.$("#affectedGroups").val();
@@ -19,8 +21,16 @@ AJS.$(document).ready(function () {
             console.log(resp);
         },
         error: function(err) {
+            console.log("ERROOOR")
             console.log(err);
         }
-    });
 
-});
+        /*error: function (data, status , err, er) {
+            console.log("ERROOOR")
+            alert("error: " + data + " status: " + status + " err:" + err);
+            console.log(er);
+        }*/
+    });
+}
+
+
