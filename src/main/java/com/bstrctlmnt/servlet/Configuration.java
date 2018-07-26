@@ -3,6 +3,8 @@ package com.bstrctlmnt.servlet;
 import com.atlassian.confluence.spaces.SpaceManager;
 import com.atlassian.confluence.spaces.SpaceStatus;
 import com.atlassian.confluence.user.UserAccessor;
+
+import com.atlassian.json.jsonorg.JSONObject;
 import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
 import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
@@ -26,6 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URI;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Scanned
 public class Configuration extends HttpServlet {
@@ -48,8 +51,6 @@ public class Configuration extends HttpServlet {
     private final PluginSettingsFactory pluginSettingsFactory;
     @ComponentImport
     private final UserAccessor userAccessor;
-
-
 
     @Inject
     public Configuration(UserManager userManager, LoginUriProvider loginUriProvider, UserAccessor userAccessor,
@@ -118,30 +119,39 @@ public class Configuration extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        final String affectedSpaceKey = req.getParameter("spacekey").trim();
-        final String spaceKeyToRemove = req.getParameter("rspacekey").trim();
-        final String affectedGroup = req.getParameter("group").trim();
-        final String groupToRemove = req.getParameter("rgroup").trim();
-        final String timeframe = req.getParameter("timeframe").trim();
+        /*  req body
+        {
+          "spaceKeys": ["spacekey", "spacekey1"],
+          "groups": ["group", "group1"],
+          "timeframe": "1"
+         }*/
 
-        //add timeframe
-        PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
-        pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", timeframe);
+        //get request body from http request
+        String jsonString = req.getReader().lines().collect(Collectors.joining());
 
+        //get data from json
+        JSONObject jsonObject = new JSONObject(jsonString);
+        String[] spaces = (String[]) jsonObject.get("spaceKeys");
+        String[] groups = (String[]) jsonObject.get("groups");
+        int timeframe = jsonObject.getInt("timeframe");
+
+        /*
         //add space key to DB
         if (spaceManager.getSpace(affectedSpaceKey) != null && !pluginDataService.getAffectedSpaces().contains(affectedSpaceKey) && !affectedSpaceKey.equals(spaceKeyToRemove)) {
             pluginDataService.addAffectedSpace(affectedSpaceKey);
         }
-
         //add affected group
         try {
             if (groupManager.getGroup(affectedGroup) != null && !affectedGroup.equals(groupToRemove) && !pluginDataService.getAffectedGroups().contains(affectedGroup)) {
                 pluginDataService.addAffectedGroup(affectedGroup);
             }
-
         } catch (EntityException e) {
             log.error(e.getMessage(), e);
-        }
+        }*/
+
+        //add timeframe
+        PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
+        pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", timeframe);
 
         Map<String, Object> context = new HashMap<>();
         context.put("affectedSpaces", pluginDataService.getAffectedSpaces());
