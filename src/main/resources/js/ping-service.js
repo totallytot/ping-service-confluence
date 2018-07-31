@@ -65,32 +65,28 @@ AJS.$(document).ready(function () {
     });
 
     function addChanges(array, type) {
-        console.log(array + " " + type);
         var value = array[0];
 
         if (type == "key selected")
         {
             if (dataObject.keysToDel.has(value)) dataObject.keysToDel.delete(value);
             else dataObject.keysToAdd.add(value);
-            console.log("key added!!!!!!!!!");
         }
         else if (type == "key removed")
         {
             if (dataObject.keysToAdd.has(value)) dataObject.keysToAdd.delete(value);
             else dataObject.keysToDel.add(value);
-            console.log("key removed!!!!!!!!!");
         }
         else if (type == "group selected")
         {
             if (dataObject.groupsToDel.has(value)) dataObject.groupsToDel.delete(value);
             else dataObject.groupsToAdd.add(value);
-            console.log("group added!!!!!!!!!");
         }
         else if (type == "group removed")
         {
             if (dataObject.groupsToAdd.has(value)) dataObject.groupsToAdd.delete(value);
             else dataObject.groupsToDel.add(value);
-            console.log("group removed!!!!!!!!!");
+
         }
     }
 
