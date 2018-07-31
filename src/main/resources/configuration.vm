@@ -6,17 +6,19 @@
     </head>
     <body>
         <form id="admin" class="aui" action="" method="POST">
+
             <div class="field-group">
-                <label for="allSpaceKeys">Select space keys to be monitored:</label>
-                <select class="multi-select" multiple="multiple" size="8" id="monitoredSpaceKeys">
-                        #foreach($spaceKey in $allSpaceKeys)
-                            <option value="$spaceKey"
-                                #if ($affectedSpaces.contains($spaceKey)) selected #end>$spaceKey</option>
-                        #end
-                </select>
+                <label for="monitoredSpaceKeys">Select space keys to be monitored:</label>
+                    <select class="multi-select" multiple="multiple" size="8" id="monitoredSpaceKeys">
+                            #foreach($spaceKey in $allSpaceKeys)
+                                <option value="$spaceKey"
+                                    #if ($affectedSpaces.contains($spaceKey)) selected #end>$spaceKey</option>
+                            #end
+                    </select>
             </div>
+
             <div class="field-group">
-                <label for="allGroups">Select affected groups:</label>
+                <label for="affectedGroups">Select affected groups:</label>
                 <select class="multi-select" multiple="multiple" size="8" id="affectedGroups">
                     #foreach($group in $allGroups)
                         <option value="$group.getName()"
@@ -24,17 +26,18 @@
                     #end
                 </select>
             </div>
-            <div class="field-group">
-                <input type="number" min="0" id="timeframe" class="text">
-                <label for="timeframe">Period to consider pages as outdated (day(s)):</label>
-            </div>
-            <div class="field-group">
-                <input type="submit" value="Save" class="button" id="save-button" onclick="sendAjax()">
-            </div>
 
             <div>
-            <p><button class="btn" type="button" onclick="sendAjax()">Ajax</button></p>
+                <label for="timeframe">Period to consider pages as outdated (day(s)):
+                    <input type="number" min="1" id="timeframe" class="text">
+                </label>
             </div>
+
+            <br>
+            <div class="btn">
+                <input type="submit" value="Save" class="button" id="save-button">
+            </div>
+
         </form>
 
             <div class="view">

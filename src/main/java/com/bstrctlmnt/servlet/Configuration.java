@@ -12,7 +12,8 @@ import com.atlassian.sal.api.auth.LoginUriProvider;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.sal.api.user.UserProfile;
 import com.atlassian.user.Group;
-import com.bstrctlmnt.ao.PluginDataService;
+import com.bstrctlmnt.service.PluginConfigurationService;
+import com.bstrctlmnt.service.PluginDataService;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
@@ -34,7 +35,7 @@ public class Configuration extends HttpServlet {
     private static final Logger log = Logger.getLogger(Configuration.class);
     public static final String PLUGIN_STORAGE_KEY = "com.bstrctlmnt.servlet";
 
-    private final PluginDataService pluginDataService;
+    private final PluginConfigurationService pluginConfigurationService;
     @ComponentImport
     private final LoginUriProvider loginUriProvider;
     @ComponentImport
@@ -44,20 +45,17 @@ public class Configuration extends HttpServlet {
     @ComponentImport
     private final SpaceManager spaceManager;
     @ComponentImport
-    private final PluginSettingsFactory pluginSettingsFactory;
-    @ComponentImport
     private final UserAccessor userAccessor;
 
     @Inject
-    public Configuration(UserManager userManager, LoginUriProvider loginUriProvider, UserAccessor userAccessor, TemplateRenderer renderer,
-                         SpaceManager spaceManager, PluginSettingsFactory pluginSettingsFactory, PluginDataService pluginDataService) {
+    public Configuration(PluginConfigurationService pluginConfigurationService, UserManager userManager, LoginUriProvider loginUriProvider, UserAccessor userAccessor, TemplateRenderer renderer, SpaceManager spaceManager,
+                         PluginSettingsFactory pluginSettingsFactory, PluginDataService pluginDataService) {
         this.userManager = userManager;
         this.loginUriProvider = loginUriProvider;
         this.renderer = renderer;
         this.spaceManager = spaceManager;
-        this.pluginSettingsFactory = pluginSettingsFactory;
-        this.pluginDataService = pluginDataService;
         this.userAccessor = userAccessor;
+        this.pluginConfigurationService = pluginConfigurationService;
     }
 
     private void redirectToLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -82,38 +80,32 @@ public class Configuration extends HttpServlet {
             return;
         }
 
-        //store timeframe
-        PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
-        if (pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe") == null) {
-            String noTimeframe = "0";
-            pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", noTimeframe);
-        }
-
-        List<Group> allGroups = userAccessor.getGroupsAsList();
-
         resp.setContentType("text/html;charset=utf-8");
+
         Map<String, Object> context = new HashMap<>();
         context.put("allSpaceKeys", spaceManager.getAllSpaceKeys(SpaceStatus.CURRENT));
-        context.put("allGroups", allGroups);
-        context.put("affectedSpaces", pluginDataService.getAffectedSpaces());
-        context.put("affectedGroups", pluginDataService.getAffectedGroups());
-        context.put("timeframe", pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe"));
+        context.put("allGroups", userAccessor.getGroupsAsList());
+
+        Map<String, Object> configData = pluginConfigurationService.getConfiguration();
+
+        context.put("affectedSpaces", configData.get("monitoriedSpaceKeys"));
+        context.put("affectedGroups", configData.get("affectedGroups"));
+        context.put("timeframe", configData.get("timeframe"));
         renderer.render("configuration.vm", context, resp.getWriter());
         resp.getWriter().close();
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String jsonString = req.getReader().lines().collect(Collectors.joining());
-
-        //update DB here via plunging manager or service + add timeframe
-        //PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
-        //pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", timeframe);
-
-        //Send response w/t body with status 200 if DB was successfully updated, or 500 in case of errors
         ObjectMapper mapper = new ObjectMapper();
         JsonDataObject jsonDataObject = mapper.readValue(jsonString, JsonDataObject.class);
+
+        //update DB here via plunging manager or service + add timeframe
+        pluginConfigurationService.updateConfiguration(jsonDataObject.getKeysToAdd(), jsonDataObject.getKeysToDel(), jsonDataObject.getGroupsToAdd(),
+                jsonDataObject.getKeysToDel(), jsonDataObject.getTimeframe() );
+
+        //Send response w/t body with status 200 if DB was successfully updated, or 500 in case of errors
         resp.setContentType("application/json");
         mapper.writeValue(resp.getWriter(), jsonDataObject);
         resp.getWriter().close();

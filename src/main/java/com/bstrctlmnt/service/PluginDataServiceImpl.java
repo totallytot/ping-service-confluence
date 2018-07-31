@@ -1,9 +1,11 @@
-package com.bstrctlmnt.ao;
+package com.bstrctlmnt.service;
 
 import com.atlassian.activeobjects.external.ActiveObjects;
 import com.atlassian.plugin.spring.scanner.annotation.export.ExportAsService;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 import com.atlassian.sal.api.transaction.TransactionCallback;
+import com.bstrctlmnt.ao.AffectedGroups;
+import com.bstrctlmnt.ao.AffectedSpaces;
 
 import javax.inject.Inject;
 import javax.inject.Named;

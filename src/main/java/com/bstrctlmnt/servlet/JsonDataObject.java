@@ -4,11 +4,47 @@ import java.util.List;
 
 public class JsonDataObject {
 
-    private List<String> keys;
+    private List<String> keysToAdd;
 
-    private List<String> groups;
+    private List<String> keysToDel;
+
+    private List<String> groupsToAdd;
+
+    private List<String> groupsToDel;
 
     private String timeframe;
+
+    public List<String> getKeysToAdd() {
+        return keysToAdd;
+    }
+
+    public void setKeysToAdd(List<String> keysToAdd) {
+        this.keysToAdd = keysToAdd;
+    }
+
+    public List<String> getKeysToDel() {
+        return keysToDel;
+    }
+
+    public void setKeysToDel(List<String> keysToDel) {
+        this.keysToDel = keysToDel;
+    }
+
+    public List<String> getGroupsToAdd() {
+        return groupsToAdd;
+    }
+
+    public void setGroupsToAdd(List<String> groupsToAdd) {
+        this.groupsToAdd = groupsToAdd;
+    }
+
+    public List<String> getGroupsToDel() {
+        return groupsToDel;
+    }
+
+    public void setGroupsToDel(List<String> groupsToDel) {
+        this.groupsToDel = groupsToDel;
+    }
 
     public String getTimeframe() {
         return timeframe;
@@ -16,21 +52,5 @@ public class JsonDataObject {
 
     public void setTimeframe(String timeframe) {
         this.timeframe = timeframe;
-    }
-
-    public List<String> getKeys() {
-        return keys;
-    }
-
-    public void setKeys(List<String> keys) {
-        this.keys = keys;
-    }
-
-    public List<String> getGroups() {
-        return groups;
-    }
-
-    public void setGroups(List<String> groups) {
-        this.groups = groups;
     }
 }

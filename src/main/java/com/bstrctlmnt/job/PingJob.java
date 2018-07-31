@@ -14,7 +14,7 @@ import com.atlassian.sal.api.transaction.TransactionTemplate;
 import com.atlassian.scheduler.JobRunner;
 import com.atlassian.scheduler.JobRunnerRequest;
 import com.atlassian.scheduler.JobRunnerResponse;
-import com.bstrctlmnt.ao.PluginDataService;
+import com.bstrctlmnt.service.PluginDataService;
 import com.bstrctlmnt.mail.PingNotification;
 import com.bstrctlmnt.servlet.Configuration;
 import com.google.common.collect.ArrayListMultimap;
