@@ -48,8 +48,8 @@ public class Configuration extends HttpServlet {
     private final UserAccessor userAccessor;
 
     @Inject
-    public Configuration(PluginConfigurationService pluginConfigurationService, UserManager userManager, LoginUriProvider loginUriProvider, UserAccessor userAccessor, TemplateRenderer renderer, SpaceManager spaceManager,
-                         PluginSettingsFactory pluginSettingsFactory, PluginDataService pluginDataService) {
+    public Configuration(PluginConfigurationService pluginConfigurationService, UserManager userManager, LoginUriProvider loginUriProvider,
+                         UserAccessor userAccessor, TemplateRenderer renderer, SpaceManager spaceManager) {
         this.userManager = userManager;
         this.loginUriProvider = loginUriProvider;
         this.renderer = renderer;
