@@ -66,7 +66,6 @@ AJS.$(document).ready(function () {
 
     function addChanges(array, type) {
         var value = array[0];
-
         if (type == "key selected")
         {
             if (dataObject.keysToDel.has(value)) dataObject.keysToDel.delete(value);
@@ -86,7 +85,6 @@ AJS.$(document).ready(function () {
         {
             if (dataObject.groupsToAdd.has(value)) dataObject.groupsToAdd.delete(value);
             else dataObject.groupsToDel.add(value);
-
         }
     }
 
