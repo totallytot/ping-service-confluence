@@ -12,7 +12,6 @@ import com.atlassian.sal.api.user.UserProfile;
 import com.bstrctlmnt.service.PluginConfigurationService;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.log4j.Logger;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -27,10 +26,6 @@ import java.util.stream.Collectors;
 
 @Scanned
 public class Configuration extends HttpServlet {
-
-    private static final Logger log = Logger.getLogger(Configuration.class);
-    public static final String PLUGIN_STORAGE_KEY = "com.bstrctlmnt.servlet";
-
     private final PluginConfigurationService pluginConfigurationService;
     @ComponentImport
     private final LoginUriProvider loginUriProvider;
@@ -76,17 +71,15 @@ public class Configuration extends HttpServlet {
             return;
         }
 
-        resp.setContentType("text/html;charset=utf-8");
-
+        Map<String, Object> configData = pluginConfigurationService.getConfiguration();
         Map<String, Object> context = new HashMap<>();
         context.put("allSpaceKeys", spaceManager.getAllSpaceKeys(SpaceStatus.CURRENT));
         context.put("allGroups", userAccessor.getGroupsAsList());
-
-        Map<String, Object> configData = pluginConfigurationService.getConfiguration();
-
         context.put("affectedSpaces", configData.get("monitoriedSpaceKeys"));
         context.put("affectedGroups", configData.get("affectedGroups"));
         context.put("timeframe", configData.get("timeframe"));
+
+        resp.setContentType("text/html;charset=utf-8");
         renderer.render("configuration.vm", context, resp.getWriter());
         resp.getWriter().close();
     }
