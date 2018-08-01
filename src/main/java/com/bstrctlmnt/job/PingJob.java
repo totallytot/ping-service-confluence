@@ -8,15 +8,12 @@ import com.atlassian.confluence.spaces.SpaceManager;
 import com.atlassian.confluence.user.ConfluenceUser;
 import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.sal.api.user.UserManager;
-import com.atlassian.sal.api.pluginsettings.PluginSettings;
-import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
 import com.atlassian.sal.api.transaction.TransactionTemplate;
 import com.atlassian.scheduler.JobRunner;
 import com.atlassian.scheduler.JobRunnerRequest;
 import com.atlassian.scheduler.JobRunnerResponse;
 import com.bstrctlmnt.service.PluginDataService;
 import com.bstrctlmnt.mail.PingNotification;
-import com.bstrctlmnt.servlet.Configuration;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +38,6 @@ public class PingJob implements JobRunner {
     @ComponentImport
     private final TransactionTemplate transactionTemplate;
     @ComponentImport
-    private final PluginSettingsFactory pluginSettingsFactory;
-    @ComponentImport
     private final UserManager userManager;
     @ComponentImport
     private final SettingsManager settingsManager;
@@ -50,12 +45,11 @@ public class PingJob implements JobRunner {
     private final UserAccessor userAccessor;
 
     @Autowired
-    public PingJob(PageManager pageManager, SpaceManager spaceManager, TransactionTemplate transactionTemplate, PluginSettingsFactory pluginSettingsFactory,
-                   UserManager userManager, SettingsManager settingsManager, UserAccessor userAccessor, PluginDataService pluginDataService) {
+    public PingJob(PageManager pageManager, SpaceManager spaceManager, TransactionTemplate transactionTemplate, UserManager userManager,
+                   SettingsManager settingsManager, UserAccessor userAccessor, PluginDataService pluginDataService) {
         this.pageManager = pageManager;
         this.spaceManager = spaceManager;
         this.transactionTemplate = transactionTemplate;
-        this.pluginSettingsFactory = pluginSettingsFactory;
         this.userManager = userManager;
         this.settingsManager = settingsManager;
         this.userAccessor = userAccessor;
@@ -70,9 +64,7 @@ public class PingJob implements JobRunner {
 
         transactionTemplate.execute(() -> {
             //job
-            PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
-            long timeframe = Long.parseLong((String) pluginSettings.get(Configuration.PLUGIN_STORAGE_KEY + ".timeframe"));
-
+            long timeframe = Long.parseLong(pluginDataService.getTimeframe());
             Set<String> affectedSpaces = pluginDataService.getAffectedSpaces();
             Set<String> groups = pluginDataService.getAffectedGroups();
             LocalDateTime now = LocalDateTime.now();

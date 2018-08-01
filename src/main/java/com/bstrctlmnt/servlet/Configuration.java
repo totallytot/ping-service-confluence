@@ -4,16 +4,12 @@ import com.atlassian.confluence.spaces.SpaceManager;
 import com.atlassian.confluence.spaces.SpaceStatus;
 import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
-import com.atlassian.sal.api.pluginsettings.PluginSettings;
-import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
 import com.atlassian.templaterenderer.TemplateRenderer;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 import com.atlassian.sal.api.auth.LoginUriProvider;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.sal.api.user.UserProfile;
-import com.atlassian.user.Group;
 import com.bstrctlmnt.service.PluginConfigurationService;
-import com.bstrctlmnt.service.PluginDataService;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
@@ -101,9 +97,7 @@ public class Configuration extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         JsonDataObject jsonDataObject = mapper.readValue(jsonString, JsonDataObject.class);
 
-        //update DB here via plunging manager or service + add timeframe
-        pluginConfigurationService.updateConfiguration(jsonDataObject.getKeysToAdd(), jsonDataObject.getKeysToDel(), jsonDataObject.getGroupsToAdd(),
-                jsonDataObject.getKeysToDel(), jsonDataObject.getTimeframe() );
+        pluginConfigurationService.updateConfigurationFromJSON(jsonDataObject);
 
         //Send response w/t body with status 200 if DB was successfully updated, or 500 in case of errors
         resp.setContentType("application/json");

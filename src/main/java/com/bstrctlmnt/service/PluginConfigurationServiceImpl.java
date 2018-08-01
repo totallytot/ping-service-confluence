@@ -4,6 +4,7 @@ import com.atlassian.plugin.spring.scanner.annotation.export.ExportAsService;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
 import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
+import com.bstrctlmnt.servlet.JsonDataObject;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -28,12 +29,17 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
     }
 
     @Override
-    public void updateConfiguration(List<String> keysToAdd, List<String> keysToDel, List<String> groupsToAdd, List<String> groupsToDel, String timeframe) {
+    public void updateConfigurationFromJSON(JsonDataObject jsonDataObject) {
+        List<String> keysToAdd = jsonDataObject.getKeysToAdd();
+        List<String> keysToDel = jsonDataObject.getKeysToDel();
+        List<String> groupsToAdd = jsonDataObject.getKeysToAdd();
+        List<String> groupsToDel = jsonDataObject.getGroupsToDel();
+        String timeframe = jsonDataObject.getTimeframe();
 
         if (keysToAdd != null && keysToAdd.size() > 0) keysToAdd.forEach(pluginDataService::addAffectedSpace);
-
         if (groupsToAdd != null && groupsToAdd.size() > 0) groupsToAdd.forEach(pluginDataService::addAffectedGroup);
-
+        if (keysToDel != null && keysToDel.size() > 0) keysToDel.forEach(pluginDataService::removeAffectedSpace);
+        if (groupsToDel != null && groupsToDel.size() > 0)  groupsToDel.forEach(pluginDataService::removeAffectedGroup);
         if (timeframe != null && timeframe.length() > 0)
         {
             PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
@@ -44,17 +50,9 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
     @Override
     public Map<String, Object> getConfiguration() {
         Map<String, Object> configData = new HashMap<>(3);
-
         configData.put("monitoriedSpaceKeys", pluginDataService.getAffectedSpaces());
         configData.put("affectedGroups", pluginDataService.getAffectedGroups());
-
-        PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
-        if (pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe") == null) {
-            String noTimeframe = "0";
-            pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", noTimeframe);
-        }
-        configData.put("timeframe", pluginSettings.get(PLUGIN_STORAGE_KEY + ".timeframe"));
-
+        configData.put("timeframe", pluginDataService.getTimeframe());
         return configData;
     }
 }

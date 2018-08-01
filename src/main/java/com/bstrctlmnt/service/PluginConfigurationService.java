@@ -1,11 +1,12 @@
 package com.bstrctlmnt.service;
 
-import java.util.List;
+import com.bstrctlmnt.servlet.JsonDataObject;
+
 import java.util.Map;
 
 public interface PluginConfigurationService {
 
-    void updateConfiguration(List<String> keysToAdd, List<String> keysToDel, List<String> groupsToAdd, List<String> groupsToDel, String timeframe);
+    void updateConfigurationFromJSON(JsonDataObject jsonDataObject);
 
     Map<String, Object> getConfiguration();
 }

@@ -8,8 +8,16 @@ public interface PluginDataService {
 
     Set<String> getAffectedSpaces();
 
+    void removeAffectedSpace(String SpaceKey);
+
     void addAffectedGroup(String group);
 
+    void removeAffectedGroup(String group);
+
     Set<String> getAffectedGroups();
+
+    String getTimeframe();
+
+    void updateTimeframe(String timeframe);
 
 }
