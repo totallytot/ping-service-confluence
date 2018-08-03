@@ -3,8 +3,8 @@ inner join confluence.spaces sp
 on sp.spaceid = c.spaceid
 where c.contenttype = 'PAGE'
       and c.content_status = 'current'
-      and sp.spacekey in ('TEST') --monitored space keys
-      and c.lastmoddate <  '2018-07-15 19:35:10.441' /*-- current date-timeframe*/
+      and sp.spacekey in (?) --monitored space keys
+      and c.lastmoddate <  ? -- current date-timeframe
       and c.creator in
           (
             select distinct um.user_key from confluence.cwd_user cu
@@ -15,4 +15,5 @@ where c.contenttype = 'PAGE'
             inner join confluence.cwd_group cg
             on cg.id = cm.parent_id
             where cu.active = 'T'
-                  and cg.group_name in ('confluence-users')) --affected groups
+                  and cg.group_name in (?) --affected groups
+          )

@@ -3,7 +3,6 @@ package com.bstrctlmnt.job;
 import com.atlassian.confluence.pages.Page;
 import com.atlassian.confluence.pages.PageManager;
 import com.atlassian.confluence.setup.settings.SettingsManager;
-import com.atlassian.confluence.spaces.Space;
 import com.atlassian.confluence.spaces.SpaceManager;
 import com.atlassian.confluence.user.ConfluenceUser;
 import com.atlassian.confluence.user.UserAccessor;
@@ -12,6 +11,7 @@ import com.atlassian.sal.api.transaction.TransactionTemplate;
 import com.atlassian.scheduler.JobRunner;
 import com.atlassian.scheduler.JobRunnerRequest;
 import com.atlassian.scheduler.JobRunnerResponse;
+import com.bstrctlmnt.service.PagesDAOService;
 import com.bstrctlmnt.service.PluginDataService;
 import com.bstrctlmnt.mail.PingNotification;
 import com.google.common.collect.ArrayListMultimap;
@@ -20,40 +20,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 
-import java.time.Duration;
-import java.time.Instant;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Component
 public class PingJob implements JobRunner {
 
     private final PluginDataService pluginDataService;
+    private final PagesDAOService pagesDAOService;
 
     @ComponentImport
     private final PageManager pageManager;
-    @ComponentImport
-    private final SpaceManager spaceManager;
     @ComponentImport
     private final TransactionTemplate transactionTemplate;
     @ComponentImport
     private final UserManager userManager;
     @ComponentImport
     private final SettingsManager settingsManager;
-    @ComponentImport
-    private final UserAccessor userAccessor;
+
 
     @Autowired
-    public PingJob(PageManager pageManager, SpaceManager spaceManager, TransactionTemplate transactionTemplate, UserManager userManager,
-                   SettingsManager settingsManager, UserAccessor userAccessor, PluginDataService pluginDataService) {
+    public PingJob(PageManager pageManager, TransactionTemplate transactionTemplate, UserManager userManager,
+                   SettingsManager settingsManager, PluginDataService pluginDataService, PagesDAOService pagesDAOService) {
         this.pageManager = pageManager;
-        this.spaceManager = spaceManager;
         this.transactionTemplate = transactionTemplate;
         this.userManager = userManager;
         this.settingsManager = settingsManager;
-        this.userAccessor = userAccessor;
         this.pluginDataService = pluginDataService;
+        this.pagesDAOService = pagesDAOService;
     }
 
     @Override
@@ -67,12 +63,26 @@ public class PingJob implements JobRunner {
             long timeframe = Long.parseLong(pluginDataService.getTimeframe());
             Set<String> affectedSpaces = pluginDataService.getAffectedSpaces();
             Set<String> groups = pluginDataService.getAffectedGroups();
-            LocalDateTime now = LocalDateTime.now();
+
 
             if (timeframe != 0 && affectedSpaces != null && groups != null && affectedSpaces.size() > 0 && groups.size() > 0)
             {
+                LocalDateTime now = LocalDateTime.now();
+                LocalDateTime requiredDate = now.minusDays(timeframe);
+                // format in db "2017-03-21 09:17:10";
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+                Timestamp tsDate = Timestamp.valueOf(requiredDate.format(formatter));
+                List<Integer> outdatedPagesIds = pagesDAOService.getOutdatedPages(affectedSpaces, tsDate, groups);
+
                 Multimap<ConfluenceUser, Page> multiMap = ArrayListMultimap.create();
 
+                outdatedPagesIds.forEach((id) -> {
+                    Page page = pageManager.getPage(id);
+                    ConfluenceUser creator = page.getCreator();
+                    if (creator != null) multiMap.put(creator, page);
+                });
+
+                /*
                 affectedSpaces.forEach(spaceStr -> {
                     Space space = spaceManager.getSpace(spaceStr);
                     List<Page> pages = pageManager.getPages(space, true);
@@ -88,13 +98,14 @@ public class PingJob implements JobRunner {
                             multiMap.put(creator, page);
                     });
                 });
+                */
                 createNotificationAndSendEmail(multiMap, timeframe);
             }
             return null;
         });
         return JobRunnerResponse.success("Job finished successfully.");
     }
-
+    //for removal
     private boolean checkUserMembership(ConfluenceUser confluenceUser, Set<String> groups) {
          return groups.stream().anyMatch(group -> userManager.isUserInGroup(confluenceUser.getKey(), group));
     }
