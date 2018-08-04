@@ -32,13 +32,13 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
     public void updateConfigurationFromJSON(JsonDataObject jsonDataObject) {
         List<String> keysToAdd = jsonDataObject.getKeysToAdd();
         List<String> keysToDel = jsonDataObject.getKeysToDel();
-        List<String> groupsToAdd = jsonDataObject.getKeysToAdd();
+        List<String> groupsToAdd = jsonDataObject.getGroupsToAdd();
         List<String> groupsToDel = jsonDataObject.getGroupsToDel();
         String timeframe = jsonDataObject.getTimeframe();
 
         if (keysToAdd != null && keysToAdd.size() > 0) keysToAdd.forEach(pluginDataService::addAffectedSpace);
-        if (groupsToAdd != null && groupsToAdd.size() > 0) groupsToAdd.forEach(pluginDataService::addAffectedGroup);
         if (keysToDel != null && keysToDel.size() > 0) keysToDel.forEach(pluginDataService::removeAffectedSpace);
+        if (groupsToAdd != null && groupsToAdd.size() > 0) groupsToAdd.forEach(pluginDataService::addAffectedGroup);
         if (groupsToDel != null && groupsToDel.size() > 0)  groupsToDel.forEach(pluginDataService::removeAffectedGroup);
         if (timeframe != null && timeframe.length() > 0)
         {
