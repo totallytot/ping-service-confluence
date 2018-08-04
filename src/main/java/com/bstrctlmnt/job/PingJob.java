@@ -74,13 +74,18 @@ public class PingJob implements JobRunner {
                 Timestamp tsDate = Timestamp.valueOf(requiredDate.format(formatter));
                 List<Integer> outdatedPagesIds = pagesDAOService.getOutdatedPages(affectedSpaces, tsDate, groups);
 
-                Multimap<ConfluenceUser, Page> multiMap = ArrayListMultimap.create();
+                if (outdatedPagesIds != null && outdatedPagesIds.size() > 0)
+                {
+                    Multimap<ConfluenceUser, Page> multiMap = ArrayListMultimap.create();
+                    outdatedPagesIds.forEach((id) -> {
+                        Page page = pageManager.getPage(id);
+                        ConfluenceUser creator = page.getCreator();
+                        if (creator != null) multiMap.put(creator, page);
+                    });
+                    createNotificationAndSendEmail(multiMap, timeframe);
+                }
 
-                outdatedPagesIds.forEach((id) -> {
-                    Page page = pageManager.getPage(id);
-                    ConfluenceUser creator = page.getCreator();
-                    if (creator != null) multiMap.put(creator, page);
-                });
+
 
                 /*
                 affectedSpaces.forEach(spaceStr -> {
@@ -99,7 +104,7 @@ public class PingJob implements JobRunner {
                     });
                 });
                 */
-                createNotificationAndSendEmail(multiMap, timeframe);
+
             }
             return null;
         });
