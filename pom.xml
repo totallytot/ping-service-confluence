@@ -58,6 +58,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.atlassian.activeobjects</groupId>
             <artifactId>activeobjects-plugin</artifactId>
             <version>${ao.version}</version>
@@ -199,8 +205,8 @@
         <javax.ws.rs.version>1.1.1</javax.ws.rs.version>
         <javax.inject.version>1</javax.inject.version>
         <ao.version>1.5.0</ao.version>
-        <confluence.version>6.7.1</confluence.version>
-        <confluence.data.version>6.7.1</confluence.data.version>
+        <confluence.version>6.8.2</confluence.version>
+        <confluence.data.version>6.8.2</confluence.data.version>
         <amps.version>6.3.15</amps.version>
         <plugin.testrunner.version>1.2.3</plugin.testrunner.version>
         <atlassian.spring.scanner.version>1.2.13</atlassian.spring.scanner.version>

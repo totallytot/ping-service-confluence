@@ -3,9 +3,7 @@ package com.bstrctlmnt.job;
 import com.atlassian.confluence.pages.Page;
 import com.atlassian.confluence.pages.PageManager;
 import com.atlassian.confluence.setup.settings.SettingsManager;
-import com.atlassian.confluence.spaces.SpaceManager;
 import com.atlassian.confluence.user.ConfluenceUser;
-import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.sal.api.transaction.TransactionTemplate;
 import com.atlassian.scheduler.JobRunner;
@@ -64,21 +62,22 @@ public class PingJob implements JobRunner {
             Set<String> affectedSpaces = pluginDataService.getAffectedSpaces();
             Set<String> groups = pluginDataService.getAffectedGroups();
 
-
             if (timeframe != 0 && affectedSpaces != null && groups != null && affectedSpaces.size() > 0 && groups.size() > 0)
             {
+                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                System.out.println();
                 LocalDateTime now = LocalDateTime.now();
                 LocalDateTime requiredDate = now.minusDays(timeframe);
                 // format in db "2017-03-21 09:17:10";
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
                 Timestamp tsDate = Timestamp.valueOf(requiredDate.format(formatter));
-                List<Integer> outdatedPagesIds = pagesDAOService.getOutdatedPages(affectedSpaces, tsDate, groups);
+                List<String> outdatedPagesIds = pagesDAOService.getOutdatedPages(affectedSpaces, tsDate, groups);
 
                 if (outdatedPagesIds != null && outdatedPagesIds.size() > 0)
                 {
                     Multimap<ConfluenceUser, Page> multiMap = ArrayListMultimap.create();
                     outdatedPagesIds.forEach((id) -> {
-                        Page page = pageManager.getPage(id);
+                        Page page = pageManager.getPage(Long.parseLong(id));
                         ConfluenceUser creator = page.getCreator();
                         if (creator != null) multiMap.put(creator, page);
                     });

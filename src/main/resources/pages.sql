@@ -3,9 +3,9 @@ inner join spaces sp
 on sp.spaceid = c.spaceid
 where c.contenttype = 'PAGE'
       and c.content_status = 'current'
-      and sp.spacekey in (?) --monitored space keys
+      --and sp.spacekey in (?) --monitored space keys
       and c.lastmoddate > ? -- current date-timeframe
-      and c.creator in
+      /*and c.creator in
           (
             select distinct um.user_key from cwd_user cu
             inner join user_mapping um
@@ -16,4 +16,4 @@ where c.contenttype = 'PAGE'
             on cg.id = cm.parent_id
             where cu.active = 'T'
                   and cg.group_name in (?) --affected groups
-          )
+          )*/

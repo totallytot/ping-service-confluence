@@ -141,5 +141,3 @@ AJS.$(document).ready(function () {
         });
     })
 });
-
-
