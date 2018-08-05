@@ -29,7 +29,7 @@
 
             <div>
                 <label for="timeframe">Period to consider pages as outdated (day(s)):
-                    <input type="number" min="1" id="timeframe" class="text">
+                    <input type="number" min="0" id="timeframe" class="text" value="$!timeframe">
                 </label>
             </div>
 
@@ -39,23 +39,6 @@
             </div>
 
         </form>
-
-            <div class="view">
-                <label for="monitored-space-keys"><strong>Monitored space keys:</strong> </label>
-                    #foreach($space in $affectedSpaces)
-                        $!space |
-                    #end
-            </div>
-            <div class="view">
-                <label for="name"><strong>Affected user groups:</strong> </label>
-                    #foreach($group in $affectedGroups)
-                        $!group |
-                    #end
-            </div>
-            <div class="view">
-                <label for="field-value"><strong>Period to consider pages as outdated (day(s)):</strong> </label>
-                    $!timeframe
-            </div>
             <div class="Info">
                 <br>
                 <strong>Configuration:</strong> visit Administration - Scheduled Jobs in order to set time interval for running job or to run it manually<br>
