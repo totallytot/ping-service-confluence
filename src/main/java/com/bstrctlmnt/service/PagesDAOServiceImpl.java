@@ -21,7 +21,6 @@ import java.util.List;
 @ExportAsService({PagesDAOService.class})
 @Named("pagesDAOService")
 public class PagesDAOServiceImpl implements PagesDAOService {
-
     /**
      * The file name which contains query for outdated pages.
      */
@@ -48,7 +47,6 @@ public class PagesDAOServiceImpl implements PagesDAOService {
         InputStream iStream = null;
         List<String> result = null;
 
-
         try {
             Connection confluenceConnection = session.connection();
             iStream = getClass().getClassLoader().getResourceAsStream(FILE_NAME);
@@ -66,6 +64,7 @@ public class PagesDAOServiceImpl implements PagesDAOService {
                 String strId = resultSet.getString(1);
                 result.add(strId);
             }
+            result.forEach(System.out::println);
 
         } catch (SQLException | HibernateException | IOException e) {
             log.error("Connecting to Confluence database error: " + e.getMessage());

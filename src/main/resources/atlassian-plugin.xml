@@ -17,7 +17,6 @@
         <resource type="download" name="ping-service.js" location="/js/ping-service.js"/>
         <resource type="download" name="ping-service.css" location="/css/ping-service.css"/>
         <resource type="download" name="images/" location="/images"/>
-        <!--<context>ping-service-confluence</context>-->
         <context>atl.admin</context>
     </web-resource>
 

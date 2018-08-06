@@ -1,6 +1,7 @@
-AJS.$(document).ready(function () {
-
+AJS.toInit(function () {
     AJS.$(".multi-select").auiSelect2();
+    AJS.$("#affectedGroups","#monitoredSpaceKeys").show();
+    AJS.$("#affectedGroups","#monitoredSpaceKeys").css("max-width", "50%");
 
     var dataObject = {};
     dataObject.keysToAdd = [];

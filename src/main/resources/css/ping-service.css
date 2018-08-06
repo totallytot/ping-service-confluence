@@ -1,5 +1,5 @@
-.field-group{
-   max-width: 50%;
+#affectedGroups, #monitoredSpaceKeys{
+   display: none;
 }
 #timeframe{
    max-width: 50px;
