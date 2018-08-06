@@ -23,7 +23,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 @Named("pluginDataService")
 public class PluginDataServiceImpl implements PluginDataService {
 
-    public static final String PLUGIN_STORAGE_KEY = "com.bstrctlmnt.servlet";
+    private static final String PLUGIN_STORAGE_KEY = "com.bstrctlmnt.servlet";
     private static final Logger log = Logger.getLogger(PluginDataServiceImpl.class);
 
     @ComponentImport
@@ -61,17 +61,15 @@ public class PluginDataServiceImpl implements PluginDataService {
 
     @Override
     public void removeAffectedSpace(String SpaceKey) {
-        ao.executeInTransaction((TransactionCallback<AffectedSpaces>) () -> {
-            final AffectedSpaces affectedSpaces = ao.create(AffectedSpaces.class);
+        ao.executeInTransaction((TransactionCallback<Void>) () -> {
             for (AffectedSpaces as : ao.find(AffectedSpaces.class, "AFFECTED_SPACE_KEY = ?", SpaceKey)) {
                 try {
                     as.getEntityManager().delete(as);
                 } catch (SQLException e) {
                     log.error(e.getMessage(), e);
                 }
-                affectedSpaces.save();
             }
-            return affectedSpaces;
+            return null;
         });
     }
 
@@ -87,17 +85,15 @@ public class PluginDataServiceImpl implements PluginDataService {
 
     @Override
     public void removeAffectedGroup(String group) {
-        ao.executeInTransaction((TransactionCallback<AffectedGroups>) () -> {
-                final AffectedGroups affectedGroups = ao.create(AffectedGroups.class);
+        ao.executeInTransaction((TransactionCallback<Void>) () -> {
                 for (AffectedGroups ag : ao.find(AffectedGroups.class, "AFFECTED_GROUP = ?", group)) {
                     try {
                         ag.getEntityManager().delete(ag);
                     } catch (SQLException e) {
                         log.error(e.getMessage(), e);
                     }
-                    affectedGroups.save();
                 }
-                return affectedGroups;
+                return null;
         });
     }
 

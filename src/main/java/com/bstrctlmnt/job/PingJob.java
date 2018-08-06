@@ -71,7 +71,7 @@ public class PingJob implements JobRunner {
                 // format in db "2017-03-21 09:17:10";
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
                 Timestamp tsDate = Timestamp.valueOf(requiredDate.format(formatter));
-                List<String> outdatedPagesIds = pagesDAOService.getOutdatedPages(affectedSpaces, tsDate, groups);
+                List<String> outdatedPagesIds = pagesDAOService.getOutdatedPages(tsDate);
 
                 if (outdatedPagesIds != null && outdatedPagesIds.size() > 0)
                 {
@@ -83,35 +83,10 @@ public class PingJob implements JobRunner {
                     });
                     createNotificationAndSendEmail(multiMap, timeframe);
                 }
-
-
-
-                /*
-                affectedSpaces.forEach(spaceStr -> {
-                    Space space = spaceManager.getSpace(spaceStr);
-                    List<Page> pages = pageManager.getPages(space, true);
-
-                    pages.forEach(page -> {
-                        Instant instant = Instant.ofEpochMilli(page.getLastModificationDate().getTime());
-                        LocalDateTime pageLastUpdateDate = LocalDateTime.ofInstant(instant, ZoneOffset.UTC);
-                        Duration deltaTime = Duration.between(pageLastUpdateDate, now);
-                        long delta = deltaTime.toDays();
-
-                        ConfluenceUser creator = page.getCreator();
-                        if (creator != null && delta > timeframe && !userAccessor.isDeactivated(creator) && checkUserMembership(creator, groups))
-                            multiMap.put(creator, page);
-                    });
-                });
-                */
-
             }
             return null;
         });
         return JobRunnerResponse.success("Job finished successfully.");
-    }
-    //for removal
-    private boolean checkUserMembership(ConfluenceUser confluenceUser, Set<String> groups) {
-         return groups.stream().anyMatch(group -> userManager.isUserInGroup(confluenceUser.getKey(), group));
     }
 
     private void createNotificationAndSendEmail(Multimap<ConfluenceUser, Page> multiMap, long timeframe) {

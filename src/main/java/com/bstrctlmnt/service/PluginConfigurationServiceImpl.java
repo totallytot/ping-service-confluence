@@ -1,9 +1,6 @@
 package com.bstrctlmnt.service;
 
 import com.atlassian.plugin.spring.scanner.annotation.export.ExportAsService;
-import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
-import com.atlassian.sal.api.pluginsettings.PluginSettings;
-import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
 import com.bstrctlmnt.servlet.JsonDataObject;
 
 import javax.inject.Inject;
@@ -19,13 +16,9 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
     public static final String PLUGIN_STORAGE_KEY = "com.bstrctlmnt.servlet";
     private final PluginDataService pluginDataService;
 
-    @ComponentImport
-    private final PluginSettingsFactory pluginSettingsFactory;
-
     @Inject
-    public PluginConfigurationServiceImpl(PluginDataService pluginDataService, PluginSettingsFactory pluginSettingsFactory) {
+    public PluginConfigurationServiceImpl(PluginDataService pluginDataService) {
         this.pluginDataService = pluginDataService;
-        this.pluginSettingsFactory = pluginSettingsFactory;
     }
 
     @Override
@@ -39,12 +32,8 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
         if (keysToAdd != null && keysToAdd.size() > 0) keysToAdd.forEach(pluginDataService::addAffectedSpace);
         if (keysToDel != null && keysToDel.size() > 0) keysToDel.forEach(pluginDataService::removeAffectedSpace);
         if (groupsToAdd != null && groupsToAdd.size() > 0) groupsToAdd.forEach(pluginDataService::addAffectedGroup);
-        if (groupsToDel != null && groupsToDel.size() > 0)  groupsToDel.forEach(pluginDataService::removeAffectedGroup);
-        if (timeframe != null && timeframe.length() > 0)
-        {
-            PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
-            pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", timeframe);
-        }
+        if (groupsToDel != null && groupsToDel.size() > 0) groupsToDel.forEach(pluginDataService::removeAffectedGroup);
+        if (timeframe != null && timeframe.length() > 0) pluginDataService.updateTimeframe(timeframe);
     }
 
     @Override
