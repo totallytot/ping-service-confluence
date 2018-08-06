@@ -4,7 +4,6 @@ import com.atlassian.confluence.pages.Page;
 import com.atlassian.confluence.pages.PageManager;
 import com.atlassian.confluence.setup.settings.SettingsManager;
 import com.atlassian.confluence.user.ConfluenceUser;
-import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.sal.api.transaction.TransactionTemplate;
 import com.atlassian.scheduler.JobRunner;
 import com.atlassian.scheduler.JobRunnerRequest;
@@ -34,17 +33,14 @@ public class PingJob implements JobRunner {
     @ComponentImport
     private final TransactionTemplate transactionTemplate;
     @ComponentImport
-    private final UserManager userManager;
-    @ComponentImport
     private final SettingsManager settingsManager;
 
 
     @Autowired
-    public PingJob(PageManager pageManager, TransactionTemplate transactionTemplate, UserManager userManager,
-                   SettingsManager settingsManager, PluginDataService pluginDataService, PagesDAOService pagesDAOService) {
+    public PingJob(PageManager pageManager, TransactionTemplate transactionTemplate, SettingsManager settingsManager,
+                   PluginDataService pluginDataService, PagesDAOService pagesDAOService) {
         this.pageManager = pageManager;
         this.transactionTemplate = transactionTemplate;
-        this.userManager = userManager;
         this.settingsManager = settingsManager;
         this.pluginDataService = pluginDataService;
         this.pagesDAOService = pagesDAOService;
@@ -64,15 +60,16 @@ public class PingJob implements JobRunner {
 
             if (timeframe != 0 && affectedSpaces != null && groups != null && affectedSpaces.size() > 0 && groups.size() > 0)
             {
-                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                System.out.println();
+                //get expiration date
                 LocalDateTime now = LocalDateTime.now();
                 LocalDateTime requiredDate = now.minusDays(timeframe);
-                // format in db "2017-03-21 09:17:10";
+
+                //meet format in DB: "2017-03-21 09:17:10";
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
                 Timestamp tsDate = Timestamp.valueOf(requiredDate.format(formatter));
                 List<String> outdatedPagesIds = pagesDAOService.getOutdatedPages(tsDate);
 
+                //sort pages by creator and send email
                 if (outdatedPagesIds != null && outdatedPagesIds.size() > 0)
                 {
                     Multimap<ConfluenceUser, Page> multiMap = ArrayListMultimap.create();

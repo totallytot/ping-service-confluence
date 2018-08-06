@@ -1,9 +1,12 @@
-#affectedGroups, #monitoredSpaceKeys{
-   display: none;
+.field-group-ps  {
+   max-width: 50%;
 }
-#timeframe{
+#timeframe {
    max-width: 50px;
 }
 .btn{
    margin-left: 170px;
+}
+#mail-body {
+   padding: 4px 0 4px 80px;
 }
