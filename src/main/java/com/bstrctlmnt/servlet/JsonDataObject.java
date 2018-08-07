@@ -12,7 +12,7 @@ public class JsonDataObject {
 
     private List<String> groupsToDel;
 
-    private String timeframe;
+    private String timeframe, mailSubject, mailBody;
 
     public List<String> getKeysToAdd() {
         return keysToAdd;
@@ -52,5 +52,21 @@ public class JsonDataObject {
 
     public void setTimeframe(String timeframe) {
         this.timeframe = timeframe;
+    }
+
+    public String getMailSubject() {
+        return mailSubject;
+    }
+
+    public void setMailSubject(String mailSubject) {
+        this.mailSubject = mailSubject;
+    }
+
+    public String getMailBody() {
+        return mailBody;
+    }
+
+    public void setMailBody(String mailBody) {
+        this.mailBody = mailBody;
     }
 }

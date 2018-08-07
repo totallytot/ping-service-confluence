@@ -35,26 +35,31 @@
             <h5>Mail Content</h5>
             <div class="field-group-sb">
                 <label for="name">Subject:</label>
-                <input type="text" id="mail-sbj"  class="text">
+                <input type="text" id="mail-sbj"  class="text" placeholder="Your subject here..." value="$!mailSubject">
             </div>
             <form class="aui"
                 <fieldset>
                     <div class="field-group" id="mail-body">
                         <label for="textarea-id">Mail Body:</label>
-                        <textarea class="textarea" id="textarea-id" placeholder="Your mail body here..."></textarea>
+                        <textarea class="textarea" id="mail-textarea-id" placeholder="Your mail body here..." value="$!mailBody"></textarea>
                     </div>
                 </fieldset>
             </form>
+
+            <button class="aui-button" id="clear-button">Clear</button>
+            <button class="aui-button" id="default-button">Default</button>
+
+        <br>
         <br>
             <div class="btn">
-                <button class="aui-button" id="save-button">Save</button>
+                <button class="aui-button aui-button-primary" id="save-button">Save</button>
             </div>
         </form>
-        <h5>Info</h5>
-            <div class="Info">
+
+        <div class="aui-message aui-message-info" id="message-info-ps">
                 <strong>Configuration:</strong> visit Administration - Scheduled Jobs in order to set time interval for running job or to run it manually<br>
                 <strong>Default schedule:</strong> each day at 00:00:00<br>
                 <strong>Job:</strong> Old Pages Review Job<br>
-            </div>
+        </div>
     </body>
 </html>

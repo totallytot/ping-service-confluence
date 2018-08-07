@@ -20,4 +20,12 @@ public interface PluginDataService {
 
     void updateTimeframe(String timeframe);
 
+    void updateMailSubject(String subject);
+
+    String getMailSubject();
+
+    void updateMailBody(String body);
+
+    String getMailBody();
+
 }

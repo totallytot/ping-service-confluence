@@ -13,7 +13,6 @@ import java.util.Map;
 @Named("pluginConfigurationService")
 public class PluginConfigurationServiceImpl implements PluginConfigurationService{
 
-    public static final String PLUGIN_STORAGE_KEY = "com.bstrctlmnt.servlet";
     private final PluginDataService pluginDataService;
 
     @Inject
@@ -28,12 +27,16 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
         List<String> groupsToAdd = jsonDataObject.getGroupsToAdd();
         List<String> groupsToDel = jsonDataObject.getGroupsToDel();
         String timeframe = jsonDataObject.getTimeframe();
+        String mailSubject = jsonDataObject.getMailSubject();
+        String mailBody = jsonDataObject.getMailBody();
 
         if (keysToAdd != null && keysToAdd.size() > 0) keysToAdd.forEach(pluginDataService::addAffectedSpace);
         if (keysToDel != null && keysToDel.size() > 0) keysToDel.forEach(pluginDataService::removeAffectedSpace);
         if (groupsToAdd != null && groupsToAdd.size() > 0) groupsToAdd.forEach(pluginDataService::addAffectedGroup);
         if (groupsToDel != null && groupsToDel.size() > 0) groupsToDel.forEach(pluginDataService::removeAffectedGroup);
         if (timeframe != null && timeframe.length() > 0) pluginDataService.updateTimeframe(timeframe);
+        if (mailSubject != null && mailSubject.length() > 0) pluginDataService.updateMailSubject(mailSubject);
+        if (mailBody != null && mailBody.length() > 0) pluginDataService.updateMailBody(mailBody);
     }
 
     @Override
@@ -42,6 +45,8 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
         configData.put("monitoriedSpaceKeys", pluginDataService.getAffectedSpaces());
         configData.put("affectedGroups", pluginDataService.getAffectedGroups());
         configData.put("timeframe", pluginDataService.getTimeframe());
+        configData.put("subject", pluginDataService.getMailSubject());
+        configData.put("body", pluginDataService.getMailBody());
         return configData;
     }
 }

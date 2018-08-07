@@ -37,6 +37,14 @@ AJS.toInit(function () {
         dataObject.timeframe = AJS.$("#timeframe").val();
     });
 
+    AJS.$("#mail-sbj").change(function () {
+        dataObject.mailSubject = AJS.$("#mail-sbj").val();
+    });
+
+    AJS.$("mail-textarea-id").change(function () {
+        dataObject.mailBody = AJS.$("#mail-textarea-id").val();
+    });
+
     AJS.$("#save-button").click(function (e){
         e.preventDefault();
 
@@ -57,5 +65,20 @@ AJS.toInit(function () {
                 console.log(err);
             }
         });
-    })
+    });
+
+    AJS.$("#clear-button").click(function () {
+        AJS.$("#mail-textarea-id").val("");
+        AJS.$("#mail-sbj").val("");
+    });
+
+    AJS.$("#default-button").click(function () {
+        var template = "<html><body>Dear $creator,<br>\n" +
+            "<br>Could you please take a look at the pages below. You are the owner of them, but looks like their content wasn't updated for a while $days day(s)):<br>\n"
+            +"$links\n"+
+            "</body></html>\n";
+        var subject = "Notification: It's time to review your pages";
+        AJS.$("#mail-textarea-id").val(template);
+        AJS.$("#mail-sbj").val(subject);
+    });
 });

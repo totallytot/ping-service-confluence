@@ -1,12 +1,24 @@
 .field-group-ps  {
-   max-width: 50%;
+   max-width: 800px;
 }
 #timeframe {
-   max-width: 50px;
+   max-width: 45px;
 }
 .btn{
    margin-left: 170px;
 }
 #mail-body {
    padding: 4px 0 4px 80px;
+}
+#mail-sbj {
+   margin-left: 28px;
+   width: 350px;
+   max-width: 350px;
+}
+#mail-textarea-id {
+   width: 350px;
+   max-width: 550px;
+}
+#message-info-ps {
+   width: 700px;
 }

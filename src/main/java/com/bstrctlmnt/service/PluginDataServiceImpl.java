@@ -123,4 +123,29 @@ public class PluginDataServiceImpl implements PluginDataService {
         PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
         pluginSettings.put(PLUGIN_STORAGE_KEY + ".timeframe", timeframe);
     }
+
+    @Override
+    public void updateMailSubject(String subject) {
+        PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
+        pluginSettings.put(PLUGIN_STORAGE_KEY + ".subject", subject);
+    }
+
+    @Override
+    public String getMailSubject() {
+        PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
+        return (String) pluginSettings.get(PLUGIN_STORAGE_KEY + ".subject");
+    }
+
+    @Override
+    public void updateMailBody(String body) {
+        PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
+        pluginSettings.put(PLUGIN_STORAGE_KEY + ".body", body);
+    }
+
+    @Override
+    public String getMailBody() {
+        PluginSettings pluginSettings = pluginSettingsFactory.createGlobalSettings();
+        return (String) pluginSettings.get(PLUGIN_STORAGE_KEY + ".body");
+    }
 }
+

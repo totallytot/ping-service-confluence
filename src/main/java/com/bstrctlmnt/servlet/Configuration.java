@@ -78,6 +78,8 @@ public class Configuration extends HttpServlet {
         context.put("affectedSpaces", configData.get("monitoriedSpaceKeys"));
         context.put("affectedGroups", configData.get("affectedGroups"));
         context.put("timeframe", configData.get("timeframe"));
+        context.put("mailSubject", configData.get("subject"));
+        context.put("mailBody", configData.get("body"));
 
         resp.setContentType("text/html;charset=utf-8");
         renderer.render("configuration.vm", context, resp.getWriter());
