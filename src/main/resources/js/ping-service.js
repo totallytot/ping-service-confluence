@@ -88,7 +88,7 @@ AJS.toInit(function () {
 
     AJS.$("#default-button").click(function () {
         // language=HTML
-        var defaultTemplate = "<html><body>Dear $creator,<br>\n<br>Could you please take a look at the pages below. You are the owner of them, but looks like their content wasn't updated for a while $days day(s)):<br>\n$links\n</body></html>\n";
+        var defaultTemplate = "<html><body>Dear creator,<br>\n<br>Could you please take a look at the pages below. You are the owner of them, but looks like their content wasn't updated for a while days day(s)):<br>\nlinks\n</body></html>\n";
         var defaulTsubject = "Notification: It's time to review your pages";
         AJS.$("#mail-textarea-id").val(defaultTemplate);
         AJS.$("#mail-sbj").val(defaulTsubject);
