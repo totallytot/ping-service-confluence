@@ -59,6 +59,10 @@ AJS.toInit(function () {
             success: function (resp) {
                 console.log("SUCCESS");
                 console.log(resp);
+                var successFlag = AJS.flag({
+                    type: 'success',
+                    body: 'Job has been configured.',
+                });
             },
             error: function(err) {
                 console.log("ERROR");
@@ -81,4 +85,5 @@ AJS.toInit(function () {
         AJS.$("#mail-textarea-id").val(template);
         AJS.$("#mail-sbj").val(subject);
     });
+
 });
