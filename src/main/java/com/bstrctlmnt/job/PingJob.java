@@ -86,23 +86,31 @@ public class PingJob implements JobRunner {
         return JobRunnerResponse.success("Job finished successfully.");
     }
 
-    private void createNotificationAndSendEmail(Multimap<ConfluenceUser, Page> multiMap, long timeframe) {
+    private void createNotificationAndSendEmail(Multimap<ConfluenceUser, Page> multiMap, Long timeframe) {
         Set<ConfluenceUser> keys = multiMap.keySet();
 
         for (ConfluenceUser confluenceUser : keys)
         {
-            StringBuilder body = new StringBuilder();
-            Collection<Page> values = multiMap.get(confluenceUser);
+            StringBuilder links = new StringBuilder();
+            Collection<Page> pages = multiMap.get(confluenceUser);
 
+            pages.forEach((page) -> links.append(String.format("<a href=\"%s/pages/viewpage.action?pageId=%s\">%s</a>", settingsManager.getGlobalSettings().getBaseUrl(), page.getId(), page.getDisplayTitle()))
+                            .append("<br>"));
+
+            String mailbody = pluginDataService.getMailBody().replaceAll("^[$]creator\\b", confluenceUser.getName())
+                    .replaceAll("^[$]creator\\b", timeframe.toString())
+                    .replaceAll("^[$]creator\\b", links.toString());
+
+            /*
             body.append(String.format("<html><body>Dear %s,<br><br>Could you please take a look at the pages below. You are the owner of them, but looks like their content wasn't updated for a while (%d day(s)):<br>", confluenceUser.getFullName(), timeframe));
             values.forEach(page -> {
                 body.append(String.format("<a href=\"%s/pages/viewpage.action?pageId=%s\">%s</a>", settingsManager.getGlobalSettings().getBaseUrl(), page.getId(), page.getDisplayTitle()));
                 body.append("<br>");
             });
             body.append("</body></html>");
+            */
 
-            PingNotification notification = new PingNotification();
-            notification.sendEmail(confluenceUser.getEmail(), "notification: It's time to review your pages", body.toString());
+            new PingNotification().sendEmail(confluenceUser.getEmail(), pluginDataService.getMailSubject(), mailbody);
         }
     }
 }

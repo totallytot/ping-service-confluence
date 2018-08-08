@@ -3,8 +3,8 @@ INNER JOIN spaces sp
 ON sp.spaceid = c.spaceid
 WHERE c.contenttype = 'PAGE'
       AND c.content_status = 'current'
-      AND sp.spacekey IN (SELECT AFFECTED_SPACE_KEY FROM AO_DB634A_AFFECTED_SPACES)
-      AND c.lastmoddate > ? --for test only. Should be "<".
+      AND sp.spacekey IN (SELECT "AFFECTED_SPACE_KEY" FROM "AO_DB634A_AFFECTED_SPACES")
+      AND c.lastmoddate < ? --for test only. Should be "<".
       AND c.creator IN
           (
             SELECT DISTINCT um.user_key FROM cwd_user cu
@@ -15,5 +15,5 @@ WHERE c.contenttype = 'PAGE'
             INNER JOIN cwd_group cg
             ON cg.id = cm.parent_id
             where cu.active = 'T'
-                  AND cg.group_name IN (SELECT AFFECTED_GROUP FROM AO_DB634A_AFFECTED_GROUPS)
+                  AND cg.group_name IN (SELECT "AFFECTED_GROUP" FROM "AO_DB634A_AFFECTED_GROUPS")
           )

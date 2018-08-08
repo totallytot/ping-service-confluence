@@ -37,13 +37,11 @@ AJS.toInit(function () {
         dataObject.timeframe = AJS.$("#timeframe").val();
     });
 
-    AJS.$("#mail-sbj").change(function () {
-        dataObject.timeframe = AJS.$("#mail-sbj").val();
-    });
-
+    /*
     AJS.$("#mail-textarea-id").change(function (e) {
         dataObject.mailBody = AJS.$("#mail-textarea-id").val();
     });
+    */
 
     AJS.$("#save-button").click(function (e){
         e.preventDefault();
@@ -58,6 +56,7 @@ AJS.toInit(function () {
         }
         else {
             dataObject.mailBody = mailBody;
+            dataObject.mailSubject = mailSubject;
             AJS.$.ajax({
                 url: AJS.contextPath() + '/plugins/servlet/pagesreview',
                 type: 'POST',
