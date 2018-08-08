@@ -64,7 +64,6 @@ AJS.toInit(function () {
                 contentType: 'application/json',
                 data: JSON.stringify(dataObject),
                 success: function (resp) {
-                    console.log("SUCCESS");
                     console.log(resp);
 
                     AJS.flag({
@@ -75,7 +74,11 @@ AJS.toInit(function () {
                 },
                 error: function(err) {
                     console.log("ERROR");
-                    console.log(err);
+                    AJS.flag({
+                        type: 'error',
+                        body: 'Something went wrong! Check logs!',
+                        close: "auto"
+                    });
                 }
             });
         }
