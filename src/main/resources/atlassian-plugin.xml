@@ -14,6 +14,7 @@
     <web-resource key="ping-service-confluence-resources" name="ping-service-confluence Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
         <dependency>com.atlassian.auiplugin:aui-select2</dependency>
+        <dependency>com.atlassian.auiplugin:aui-flag</dependency>
         <resource type="download" name="ping-service.js" location="/js/ping-service.js"/>
         <resource type="download" name="ping-service.css" location="/css/ping-service.css"/>
         <resource type="download" name="images/" location="/images"/>
