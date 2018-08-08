@@ -21,7 +21,7 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
     }
 
     @Override
-    public void updateConfigurationFromJSON(JsonDataObject jsonDataObject) {
+    public boolean updateConfigurationFromJSON(JsonDataObject jsonDataObject) {
         List<String> keysToAdd = jsonDataObject.getKeysToAdd();
         List<String> keysToDel = jsonDataObject.getKeysToDel();
         List<String> groupsToAdd = jsonDataObject.getGroupsToAdd();
@@ -37,6 +37,8 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
         if (timeframe != null && timeframe.length() > 0) pluginDataService.updateTimeframe(timeframe);
         if (mailSubject != null && mailSubject.length() > 0) pluginDataService.updateMailSubject(mailSubject);
         if (mailBody != null && mailBody.length() > 0) pluginDataService.updateMailBody(mailBody);
+
+        return true;
     }
 
     @Override
