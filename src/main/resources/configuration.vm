@@ -32,22 +32,25 @@
                     <input type="number" min="0" id="timeframe" class="text" value="$!timeframe">
                 </label>
             </div>
+
             <h5>Mail Content</h5>
             <div class="field-group-sb">
-                <label for="name">Subject:</label>
-                <input type="text" id="mail-sbj"  class="text" placeholder="Your subject here..." value="$!mailSubject">
+                <label for="mail-sbj">Subject:<span class="aui-icon icon-required" id="required-subj"></span></label>
+                <input type="text" id="mail-sbj" class="text" placeholder="Your subject here..." value="$!mailSubject">
             </div>
             <form class="aui"
                 <fieldset>
                     <div class="field-group" id="mail-body">
-                        <label for="textarea-id">Mail Body:</label>
+                        <label for="textarea-id">Mail Body:<span class="aui-icon icon-required" id="required-body"></span></label>
                         <textarea class="textarea" id="mail-textarea-id" placeholder="Your mail body here...">$mailBody</textarea>
                     </div>
                 </fieldset>
             </form>
 
+        <div class="mail-buttons-ps">
             <button class="aui-button" id="clear-button">Clear</button>
             <button class="aui-button" id="default-button">Default</button>
+        </div>
 
         <br>
         <br>

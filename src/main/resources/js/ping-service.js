@@ -37,32 +37,49 @@ AJS.toInit(function () {
         dataObject.timeframe = AJS.$("#timeframe").val();
     });
 
+    AJS.$("#mail-sbj").change(function () {
+        dataObject.timeframe = AJS.$("#mail-sbj").val();
+    });
+
+    AJS.$("#mail-textarea-id").change(function (e) {
+        dataObject.mailBody = AJS.$("#mail-textarea-id").val();
+    });
+
     AJS.$("#save-button").click(function (e){
         e.preventDefault();
-        dataObject.mailSubject = AJS.$("#mail-sbj").val();
-        dataObject.mailBody = AJS.$("#mail-textarea-id").val();
+        var mailBody = AJS.$("#mail-textarea-id").val();
+        var mailSubject = AJS.$("#mail-sbj").val();
+        if (mailBody === null || mailBody.length === 0 || mailSubject === null || mailSubject.length === 0) {
+            AJS.flag({
+                type: 'error',
+                body: 'Please populate mail subject and body!',
+                close: "auto"
+            });
+        }
+        else {
+            dataObject.mailBody = mailBody;
+            AJS.$.ajax({
+                url: AJS.contextPath() + '/plugins/servlet/pagesreview',
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(dataObject),
+                success: function (resp) {
+                    console.log("SUCCESS");
+                    console.log(resp);
 
-        console.log(JSON.stringify(dataObject));
-
-        AJS.$.ajax({
-            url: AJS.contextPath() + '/plugins/servlet/pagesreview',
-            type: 'POST',
-            dataType: 'json',
-            contentType: 'application/json',
-            data: JSON.stringify(dataObject),
-            success: function (resp) {
-                console.log("SUCCESS");
-                console.log(resp);
-                var successFlag = AJS.flag({
-                    type: 'success',
-                    body: 'Job has been configured.',
-                });
-            },
-            error: function(err) {
-                console.log("ERROR");
-                console.log(err);
-            }
-        });
+                    AJS.flag({
+                        type: 'success',
+                        body: 'Job has been configured.',
+                        close: "auto"
+                    });
+                },
+                error: function(err) {
+                    console.log("ERROR");
+                    console.log(err);
+                }
+            });
+        }
     });
 
     AJS.$("#clear-button").click(function () {
