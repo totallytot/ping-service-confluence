@@ -1,5 +1,5 @@
 .field-group-ps  {
-   max-width: 800px;
+   width: 450px;
 }
 #timeframe {
    max-width: 45px;
@@ -16,9 +16,10 @@
    max-width: 350px;
 }
 #mail-textarea-id {
+   height: 150px;
    width: 350px;
    max-width: 550px;
 }
 #message-info-ps {
-   width: 700px;
+   width: 750px;
 }

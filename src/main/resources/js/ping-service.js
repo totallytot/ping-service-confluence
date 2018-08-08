@@ -37,16 +37,10 @@ AJS.toInit(function () {
         dataObject.timeframe = AJS.$("#timeframe").val();
     });
 
-    AJS.$("#mail-sbj").change(function () {
-        dataObject.mailSubject = AJS.$("#mail-sbj").val();
-    });
-
-    AJS.$("mail-textarea-id").change(function () {
-        dataObject.mailBody = AJS.$("#mail-textarea-id").val();
-    });
-
     AJS.$("#save-button").click(function (e){
         e.preventDefault();
+        dataObject.mailSubject = AJS.$("#mail-sbj").val();
+        dataObject.mailBody = AJS.$("#mail-textarea-id").val();
 
         console.log(JSON.stringify(dataObject));
 
@@ -73,12 +67,11 @@ AJS.toInit(function () {
     });
 
     AJS.$("#default-button").click(function () {
-        var template = "<html><body>Dear $creator,<br>\n" +
-            "<br>Could you please take a look at the pages below. You are the owner of them, but looks like their content wasn't updated for a while $days day(s)):<br>\n"
-            +"$links\n"+
-            "</body></html>\n";
-        var subject = "Notification: It's time to review your pages";
-        AJS.$("#mail-textarea-id").val(template);
-        AJS.$("#mail-sbj").val(subject);
+        // language=HTML
+        var defaultTemplate = "<html><body>Dear $creator,<br>\n<br>Could you please take a look at the pages below. You are the owner of them, but looks like their content wasn't updated for a while $days day(s)):<br>\n$links\n</body></html>\n";
+        var defaulTsubject = "Notification: It's time to review your pages";
+        AJS.$("#mail-textarea-id").val(defaultTemplate);
+        AJS.$("#mail-sbj").val(defaulTsubject);
     });
+
 });

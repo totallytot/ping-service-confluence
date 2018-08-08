@@ -8,8 +8,8 @@
     <h5>Job Input</h5>
         <form id="admin" class="aui" action="" method="POST">
             <div class="field-group-ps">
-                <label for="monitoredSpaceKeys">Select space keys to be monitored:
-                    <select class="multi-select" multiple="multiple" size="8" id="monitoredSpaceKeys"></label>
+                <label for="monitoredSpaceKeys">Select space keys to be monitored:</label>
+                    <select class="multi-select" multiple="multiple" size="8" id="monitoredSpaceKeys">
                             #foreach($spaceKey in $allSpaceKeys)
                                 <option value="$spaceKey"
                                     #if ($affectedSpaces.contains($spaceKey)) selected #end>$spaceKey</option>
@@ -41,7 +41,7 @@
                 <fieldset>
                     <div class="field-group" id="mail-body">
                         <label for="textarea-id">Mail Body:</label>
-                        <textarea class="textarea" id="mail-textarea-id" placeholder="Your mail body here..." value="$!mailBody"></textarea>
+                        <textarea class="textarea" id="mail-textarea-id" placeholder="Your mail body here...">$mailBody</textarea>
                     </div>
                 </fieldset>
             </form>
