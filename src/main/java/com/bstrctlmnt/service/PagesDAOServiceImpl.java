@@ -24,7 +24,8 @@ public class PagesDAOServiceImpl implements PagesDAOService {
     /**
      * The file name which contains query for outdated pages.
      */
-    private static final String FILE_NAME = "pages.sql";
+    private static final String FILE_NAME_POSTGRE = "sql/pagesPostgre.sql";
+    private static final String FILE_NAME = "sql/pages.sql";
     /**
      * The encoding used to transform stream to string.
      */
@@ -49,7 +50,15 @@ public class PagesDAOServiceImpl implements PagesDAOService {
 
         try {
             Connection confluenceConnection = session.connection();
-            iStream = getClass().getClassLoader().getResourceAsStream(FILE_NAME);
+            String databaseName = confluenceConnection.getMetaData().getDatabaseProductName();
+
+            if (databaseName.equals("H2") || databaseName.equals("PostgreSQL")) {
+                iStream = getClass().getClassLoader().getResourceAsStream(FILE_NAME_POSTGRE);
+            }
+            else {
+                iStream = getClass().getClassLoader().getResourceAsStream(FILE_NAME);
+            }
+
             StringWriter writer = new StringWriter();
             IOUtils.copy(iStream, writer, ENCODING);
             String query = writer.toString();

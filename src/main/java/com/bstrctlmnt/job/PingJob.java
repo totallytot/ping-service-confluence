@@ -94,12 +94,13 @@ public class PingJob implements JobRunner {
             StringBuilder links = new StringBuilder();
             Collection<Page> pages = multiMap.get(confluenceUser);
 
-            pages.forEach((page) -> links.append(String.format("<a href=\"%s/pages/viewpage.action?pageId=%s\">%s</a>", settingsManager.getGlobalSettings().getBaseUrl(), page.getId(), page.getDisplayTitle()))
+            pages.forEach((page) -> links.append("- ")
+                            .append(String.format("<a href=\"%s/pages/viewpage.action?pageId=%s\">%s</a>", settingsManager.getGlobalSettings().getBaseUrl(), page.getId(), page.getDisplayTitle()))
                             .append("<br>"));
 
-            String mailbody = pluginDataService.getMailBody().replaceAll("[$]creator\\b", confluenceUser.getName())
-                    .replaceAll("[$]days\\b", timeframe.toString())
-                    .replaceAll("[$]links\\b", links.toString());
+            String mailbody = pluginDataService.getMailBody().replace("$creator", confluenceUser.getName())
+                    .replace("$days", timeframe.toString())
+                    .replace("$links", links.toString());
 
             /*
             body.append(String.format("<html><body>Dear %s,<br><br>Could you please take a look at the pages below. You are the owner of them, but looks like their content wasn't updated for a while (%d day(s)):<br>", confluenceUser.getFullName(), timeframe));
