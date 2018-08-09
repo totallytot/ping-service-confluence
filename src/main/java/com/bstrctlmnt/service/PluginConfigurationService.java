@@ -6,7 +6,7 @@ import java.util.Map;
 
 public interface PluginConfigurationService {
 
-    void updateConfigurationFromJSON(JsonDataObject jsonDataObject);
+    boolean updateConfigurationFromJSON(JsonDataObject jsonDataObject);
 
     Map<String, Object> getConfiguration();
 }
