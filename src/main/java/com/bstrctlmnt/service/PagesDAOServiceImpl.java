@@ -1,11 +1,10 @@
 package com.bstrctlmnt.service;
 
-import com.atlassian.core.db.JDBCUtils;
-import com.atlassian.hibernate.PluginHibernateSessionFactory;
 import com.atlassian.plugin.spring.scanner.annotation.export.ExportAsService;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
-import net.sf.hibernate.HibernateException;
-import net.sf.hibernate.Session;
+import com.atlassian.sal.api.rdbms.ConnectionCallback;
+import com.atlassian.sal.api.rdbms.TransactionalExecutor;
+import com.atlassian.sal.api.rdbms.TransactionalExecutorFactory;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
@@ -33,55 +32,51 @@ public class PagesDAOServiceImpl implements PagesDAOService {
     private static final Logger log = Logger.getLogger(PluginDataServiceImpl.class);
 
     @ComponentImport
-    private PluginHibernateSessionFactory sessionFactory;
+    private TransactionalExecutorFactory transactionalExecutorFactory;
 
     @Inject
-    public PagesDAOServiceImpl(PluginHibernateSessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public PagesDAOServiceImpl(TransactionalExecutorFactory transactionalExecutorFactory) {
+        this.transactionalExecutorFactory = transactionalExecutorFactory;
     }
 
     @Override
     public List<String> getOutdatedPages(Timestamp date) {
-        Session session = sessionFactory.getSession();
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        InputStream iStream = null;
-        List<String> result = null;
+        final TransactionalExecutor transactionalExecutor = transactionalExecutorFactory.createExecutor(true, true);
+        List<String> result = new ArrayList<>();
 
-        try {
-            Connection confluenceConnection = session.connection();
-            String databaseName = confluenceConnection.getMetaData().getDatabaseProductName();
+        transactionalExecutor.execute((ConnectionCallback<Void>) connection -> {
+            try
+            {
+                String databaseName = connection.getMetaData().getDatabaseProductName();
+                InputStream iStream = null;
 
-            if (databaseName.equals("H2") || databaseName.equals("PostgreSQL")) {
-                iStream = getClass().getClassLoader().getResourceAsStream(FILE_NAME_POSTGRE);
+                if (databaseName.equals("H2") || databaseName.equals("PostgreSQL")) {
+                    iStream = getClass().getClassLoader().getResourceAsStream(FILE_NAME_POSTGRE);
+                }
+                else {
+                    iStream = getClass().getClassLoader().getResourceAsStream(FILE_NAME);
+                }
+                StringWriter writer = new StringWriter();
+                IOUtils.copy(iStream, writer, ENCODING);
+
+                iStream.close();
+
+                String query = writer.toString();
+                final PreparedStatement preparedStatement = connection.prepareStatement(query);
+                preparedStatement.setTimestamp(1, date);
+                final ResultSet resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    String strId = resultSet.getString(1);
+                    result.add(strId);
+                }
             }
-            else {
-                iStream = getClass().getClassLoader().getResourceAsStream(FILE_NAME);
+            catch (SQLException | IOException e)
+            {
+                log.error("Connecting to Confluence database error: " + e.getMessage());
             }
 
-            StringWriter writer = new StringWriter();
-            IOUtils.copy(iStream, writer, ENCODING);
-            String query = writer.toString();
-            preparedStatement = confluenceConnection.prepareStatement(query);
-            preparedStatement.setTimestamp(1, date);
-            resultSet = preparedStatement.executeQuery();
-            /*
-            The sql query returns page IDs, we just get all values from the first column.
-             */
-            result = new ArrayList<>();
-            while (resultSet.next()) {
-                String strId = resultSet.getString(1);
-                result.add(strId);
-            }
-            result.forEach(System.out::println);
-
-        } catch (SQLException | HibernateException | IOException e) {
-            log.error("Connecting to Confluence database error: " + e.getMessage());
-        } finally {
-            JDBCUtils.close(resultSet);
-            JDBCUtils.close(preparedStatement);
-            IOUtils.closeQuietly(iStream);
-        }
+            return null;
+        });
         return result;
     }
 }
