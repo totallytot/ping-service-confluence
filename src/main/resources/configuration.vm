@@ -63,6 +63,7 @@
                 <strong>Configuration:</strong> visit Administration - Scheduled Jobs in order to set time interval for running job or to run it manually<br>
                 <strong>Default schedule:</strong> each day at 00:00:00<br>
                 <strong>Job:</strong> Old Pages Review Job<br>
+                <strong>Available variables for mail body:</strong> $creator, $days, $links<br>
         </div>
     </body>
 </html>
