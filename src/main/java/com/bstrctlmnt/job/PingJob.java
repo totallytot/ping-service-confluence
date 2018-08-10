@@ -39,13 +39,13 @@ public class PingJob implements JobRunner {
 
     @Autowired
     public PingJob(PageManager pageManager, TransactionTemplate transactionTemplate, SettingsManager settingsManager,
-                   PluginDataService pluginDataService, PagesDAOService pagesDAOService, PingNotification pingNotification) {
+                   PluginDataService pluginDataService, PagesDAOService pagesDAOService) {
         this.pageManager = pageManager;
         this.transactionTemplate = transactionTemplate;
         this.settingsManager = settingsManager;
         this.pluginDataService = pluginDataService;
         this.pagesDAOService = pagesDAOService;
-        this.pingNotification = pingNotification;
+        this.pingNotification = new PingNotification();
     }
 
     @Override
