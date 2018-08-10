@@ -44,11 +44,11 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
     @Override
     public Map<String, Object> getConfiguration() {
         Map<String, Object> configData = new HashMap<>(3);
-        configData.put("monitoriedSpaceKeys", pluginDataService.getAffectedSpaces());
+        configData.put("affectedSpaces", pluginDataService.getAffectedSpaces());
         configData.put("affectedGroups", pluginDataService.getAffectedGroups());
         configData.put("timeframe", pluginDataService.getTimeframe());
-        configData.put("subject", pluginDataService.getMailSubject());
-        configData.put("body", pluginDataService.getMailBody());
+        configData.put("mailSubject", pluginDataService.getMailSubject());
+        configData.put("mailBody", pluginDataService.getMailBody());
         return configData;
     }
 }
