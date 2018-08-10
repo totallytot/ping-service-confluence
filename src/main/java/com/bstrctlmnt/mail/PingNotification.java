@@ -38,8 +38,5 @@ public class PingNotification {
                 log.error(e.getMessage(), e);
             }
         }
-        else {
-            //do nothing
-        }
     }
 }

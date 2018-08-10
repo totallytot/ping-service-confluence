@@ -27,6 +27,7 @@ public class PingJob implements JobRunner {
 
     private final PluginDataService pluginDataService;
     private final PagesDAOService pagesDAOService;
+    private final PingNotification pingNotification;
 
     @ComponentImport
     private final PageManager pageManager;
@@ -38,12 +39,13 @@ public class PingJob implements JobRunner {
 
     @Autowired
     public PingJob(PageManager pageManager, TransactionTemplate transactionTemplate, SettingsManager settingsManager,
-                   PluginDataService pluginDataService, PagesDAOService pagesDAOService) {
+                   PluginDataService pluginDataService, PagesDAOService pagesDAOService, PingNotification pingNotification) {
         this.pageManager = pageManager;
         this.transactionTemplate = transactionTemplate;
         this.settingsManager = settingsManager;
         this.pluginDataService = pluginDataService;
         this.pagesDAOService = pagesDAOService;
+        this.pingNotification = pingNotification;
     }
 
     @Override
@@ -78,7 +80,7 @@ public class PingJob implements JobRunner {
                         ConfluenceUser creator = page.getCreator();
                         if (creator != null) multiMap.put(creator, page);
                     });
-                    createNotificationAndSendEmail(multiMap, timeframe);
+                    createNotificationAndSendEmail(multiMap, timeframe, pingNotification);
                 }
             }
             return null;
@@ -86,7 +88,7 @@ public class PingJob implements JobRunner {
         return JobRunnerResponse.success("Job finished successfully.");
     }
 
-    private void createNotificationAndSendEmail(Multimap<ConfluenceUser, Page> multiMap, Long timeframe) {
+    private void createNotificationAndSendEmail(Multimap<ConfluenceUser, Page> multiMap, Long timeframe, PingNotification pingNotification) {
         Set<ConfluenceUser> keys = multiMap.keySet();
 
         for (ConfluenceUser confluenceUser : keys)
@@ -103,7 +105,7 @@ public class PingJob implements JobRunner {
                     .replace("$days", timeframe.toString())
                     .replace("$links", links.toString());
 
-            new PingNotification().sendEmail(confluenceUser.getEmail(), pluginDataService.getMailSubject(), mailbody);
+            pingNotification.sendEmail(confluenceUser.getEmail(), pluginDataService.getMailSubject(), mailbody);
         }
     }
 }
