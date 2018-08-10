@@ -92,10 +92,6 @@ public class Configuration extends HttpServlet {
         JsonDataObject jsonDataObject = mapper.readValue(jsonString, JsonDataObject.class);
         if (pluginConfigurationService.updateConfigurationFromJSON(jsonDataObject)) resp.sendError(HttpServletResponse.SC_OK);
         else resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        //Send response w/t body with status 200 if DB was successfully updated, or 500 in case of errors
-        //resp.setContentType("application/json");
-        //mapper.writeValue(resp.getWriter(), jsonDataObject);
-        //resp.getWriter().close();
     }
 }
 

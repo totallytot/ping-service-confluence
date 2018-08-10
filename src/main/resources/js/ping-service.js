@@ -6,7 +6,7 @@ AJS.toInit(function () {
     dataObject.groupsToAdd = [];
     dataObject.groupsToDel = [];
 
-    AJS.$(document).on('change', '#monitoredSpaceKeys', function(e) {
+    AJS.$(document).on('change', '#monitoredSpaceKeys', function (e) {
         if (e.added) {
             console.log('add ' + e.added.id);
             if (dataObject.keysToDel.includes(e.added.id)) dataObject.keysToDel.splice(dataObject.keysToDel.indexOf(e.added.id), 1);
@@ -19,7 +19,7 @@ AJS.toInit(function () {
         }
     });
 
-    AJS.$(document).on('change', '#affectedGroups', function(e) {
+    AJS.$(document).on('change', '#affectedGroups', function (e) {
         if (e.added) {
             console.log('add ' + e.added.id);
             if (dataObject.groupsToDel.includes(e.added.id)) dataObject.groupsToDel.splice(dataObject.groupsToDel.indexOf(e.added.id), 1);
@@ -37,13 +37,7 @@ AJS.toInit(function () {
         dataObject.timeframe = AJS.$("#timeframe").val();
     });
 
-    /*
-    AJS.$("#mail-textarea-id").change(function (e) {
-        dataObject.mailBody = AJS.$("#mail-textarea-id").val();
-    });
-    */
-
-    AJS.$("#save-button").click(function (e){
+    AJS.$("#save-button").click(function (e) {
         e.preventDefault();
         var mailBody = AJS.$("#mail-textarea-id").val();
         var mailSubject = AJS.$("#mail-sbj").val();
@@ -72,7 +66,7 @@ AJS.toInit(function () {
                         close: "auto"
                     });
                 },
-                error: function(err) {
+                error: function (err) {
                     console.log("ERROR");
                     console.log(err);
                     AJS.flag({

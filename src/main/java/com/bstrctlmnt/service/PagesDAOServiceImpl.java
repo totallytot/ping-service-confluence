@@ -20,14 +20,12 @@ import java.util.List;
 @ExportAsService({PagesDAOService.class})
 @Named("pagesDAOService")
 public class PagesDAOServiceImpl implements PagesDAOService {
-    /**
-     * The file name which contains query for outdated pages.
-     */
+
+    // files which contain query for outdated pages
     private static final String FILE_NAME_POSTGRE = "sql/pagesPostgre.sql";
     private static final String FILE_NAME = "sql/pages.sql";
-    /**
-     * The encoding used to transform stream to string.
-     */
+
+    //The encoding used to transform stream to string.
     private static final String ENCODING = "UTF-8";
     private static final Logger log = Logger.getLogger(PluginDataServiceImpl.class);
 

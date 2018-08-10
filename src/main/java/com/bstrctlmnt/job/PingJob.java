@@ -98,18 +98,10 @@ public class PingJob implements JobRunner {
                             .append(String.format("<a href=\"%s/pages/viewpage.action?pageId=%s\">%s</a>", settingsManager.getGlobalSettings().getBaseUrl(), page.getId(), page.getDisplayTitle()))
                             .append("<br>"));
 
+            // mail variables
             String mailbody = pluginDataService.getMailBody().replace("$creator", confluenceUser.getName())
                     .replace("$days", timeframe.toString())
                     .replace("$links", links.toString());
-
-            /*
-            body.append(String.format("<html><body>Dear %s,<br><br>Could you please take a look at the pages below. You are the owner of them, but looks like their content wasn't updated for a while (%d day(s)):<br>", confluenceUser.getFullName(), timeframe));
-            values.forEach(page -> {
-                body.append(String.format("<a href=\"%s/pages/viewpage.action?pageId=%s\">%s</a>", settingsManager.getGlobalSettings().getBaseUrl(), page.getId(), page.getDisplayTitle()));
-                body.append("<br>");
-            });
-            body.append("</body></html>");
-            */
 
             new PingNotification().sendEmail(confluenceUser.getEmail(), pluginDataService.getMailSubject(), mailbody);
         }
