@@ -43,36 +43,40 @@ public class PagesDAOServiceImpl implements PagesDAOService {
         List<String> result = new ArrayList<>();
 
         transactionalExecutor.execute((ConnectionCallback<Void>) connection -> {
-            try
-            {
+            InputStream iStream = null;
+            PreparedStatement preparedStatement = null;
+            ResultSet resultSet = null;
+
+            try {
                 String databaseName = connection.getMetaData().getDatabaseProductName();
-                InputStream iStream = null;
 
                 if (databaseName.equals("H2") || databaseName.equals("PostgreSQL")) {
                     iStream = getClass().getClassLoader().getResourceAsStream(FILE_NAME_POSTGRE);
-                }
-                else {
+                } else {
                     iStream = getClass().getClassLoader().getResourceAsStream(FILE_NAME);
                 }
                 StringWriter writer = new StringWriter();
                 IOUtils.copy(iStream, writer, ENCODING);
 
-                iStream.close();
-
                 String query = writer.toString();
-                final PreparedStatement preparedStatement = connection.prepareStatement(query);
+                preparedStatement = connection.prepareStatement(query);
                 preparedStatement.setTimestamp(1, date);
-                final ResultSet resultSet = preparedStatement.executeQuery();
+                resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
                     String strId = resultSet.getString(1);
                     result.add(strId);
                 }
-            }
-            catch (SQLException | IOException e)
-            {
+            } catch (SQLException | IOException e) {
                 log.error("Connecting to Confluence database error: " + e.getMessage());
+            } finally {
+                try {
+                    if (resultSet != null)resultSet.close();
+                    if (preparedStatement != null)preparedStatement.close();
+                    if (iStream != null)iStream.close();
+                } catch (SQLException | IOException e) {
+                    log.error(e.getMessage(), e);
+                }
             }
-
             return null;
         });
         return result;
