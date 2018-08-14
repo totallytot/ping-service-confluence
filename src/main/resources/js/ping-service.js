@@ -60,11 +60,13 @@ AJS.toInit(function () {
                 success: function (resp) {
                     console.log("SUCCESS");
                     console.log(resp);
+                    console.log(JSON.stringify(dataObject));
                     AJS.flag({
                         type: 'success',
                         body: 'Job has been configured.',
                         close: "auto"
                     });
+                    cleanDataObject();
                 },
                 error: function (err) {
                     console.log("ERROR");
@@ -74,10 +76,18 @@ AJS.toInit(function () {
                         body: 'Something went wrong! Check logs!',
                         close: "auto"
                     });
+                    cleanDataObject();
                 }
             });
         }
     });
+
+    function cleanDataObject() {
+        dataObject.keysToAdd = [];
+        dataObject.keysToDel = [];
+        dataObject.groupsToAdd = [];
+        dataObject.groupsToDel = [];
+    }
 
     AJS.$("#clear-button").click(function () {
         AJS.$("#mail-textarea-id").val("");

@@ -88,7 +88,8 @@ public class PingJob implements JobRunner {
         return JobRunnerResponse.success("Job finished successfully.");
     }
 
-    private void createNotificationAndSendEmail(Multimap<ConfluenceUser, Page> multiMap, Long timeframe, PingNotification pingNotification) {
+    private void createNotificationAndSendEmail(Multimap<ConfluenceUser, Page> multiMap, Long timeframe,
+                                                PingNotification pingNotification) {
         Set<ConfluenceUser> keys = multiMap.keySet();
 
         for (ConfluenceUser confluenceUser : keys)
@@ -97,7 +98,8 @@ public class PingJob implements JobRunner {
             Collection<Page> pages = multiMap.get(confluenceUser);
 
             pages.forEach((page) -> links.append("- ")
-                            .append(String.format("<a href=\"%s/pages/viewpage.action?pageId=%s\">%s</a>", settingsManager.getGlobalSettings().getBaseUrl(), page.getId(), page.getDisplayTitle()))
+                            .append(String.format("<a href=\"%s/pages/viewpage.action?pageId=%s\">%s</a>",
+                                    settingsManager.getGlobalSettings().getBaseUrl(), page.getId(), page.getDisplayTitle()))
                             .append("<br>"));
 
             // mail variables

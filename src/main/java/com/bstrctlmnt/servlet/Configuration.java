@@ -39,8 +39,9 @@ public class Configuration extends HttpServlet {
     private final UserAccessor userAccessor;
 
     @Inject
-    public Configuration(PluginConfigurationService pluginConfigurationService, UserManager userManager, LoginUriProvider loginUriProvider,
-                         UserAccessor userAccessor, TemplateRenderer renderer, SpaceManager spaceManager) {
+    public Configuration(PluginConfigurationService pluginConfigurationService, UserManager userManager,
+                         LoginUriProvider loginUriProvider, UserAccessor userAccessor, TemplateRenderer renderer,
+                         SpaceManager spaceManager) {
         this.userManager = userManager;
         this.loginUriProvider = loginUriProvider;
         this.renderer = renderer;
@@ -84,7 +85,8 @@ public class Configuration extends HttpServlet {
         String jsonString = req.getReader().lines().collect(Collectors.joining());
         ObjectMapper mapper = new ObjectMapper();
         JsonDataObject jsonDataObject = mapper.readValue(jsonString, JsonDataObject.class);
-        if (pluginConfigurationService.updateConfigurationFromJSON(jsonDataObject)) resp.sendError(HttpServletResponse.SC_OK);
+        if (pluginConfigurationService.updateConfigurationFromJSON(jsonDataObject))
+            resp.sendError(HttpServletResponse.SC_OK);
         else resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
     }
 }
