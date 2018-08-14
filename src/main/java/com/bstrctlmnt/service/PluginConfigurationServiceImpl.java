@@ -43,7 +43,7 @@ public class PluginConfigurationServiceImpl implements PluginConfigurationServic
 
     @Override
     public Map<String, Object> getConfiguration() {
-        Map<String, Object> configData = new HashMap<>(3);
+        Map<String, Object> configData = new HashMap<>(5, 1);
         configData.put("affectedSpaces", pluginDataService.getAffectedSpaces());
         configData.put("affectedGroups", pluginDataService.getAffectedGroups());
         configData.put("timeframe", pluginDataService.getTimeframe());
