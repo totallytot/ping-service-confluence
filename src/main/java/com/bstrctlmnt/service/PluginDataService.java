@@ -4,11 +4,17 @@ import java.util.Set;
 
 public interface PluginDataService {
 
-    void addAffectedSpace(String SpaceKey);
+    void addAffectedSpace(String spaceKey);
 
     Set<String> getAffectedSpaces();
 
-    void removeAffectedSpace(String SpaceKey);
+    void removeAffectedSpace(String spaceKey);
+
+    void addLabel(String label);
+
+    Set<String> getLabels();
+
+    void removeLabel(String label);
 
     void addAffectedGroup(String group);
 

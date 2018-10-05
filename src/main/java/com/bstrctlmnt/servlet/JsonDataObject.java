@@ -12,6 +12,10 @@ public class JsonDataObject {
 
     private List<String> groupsToDel;
 
+    private List<String> labelsToAdd;
+
+    private List<String> labelsToDel;
+
     private String timeframe, mailSubject, mailBody;
 
     public List<String> getKeysToAdd() {
@@ -44,6 +48,22 @@ public class JsonDataObject {
 
     public void setGroupsToDel(List<String> groupsToDel) {
         this.groupsToDel = groupsToDel;
+    }
+
+    public List<String> getLabelsToAdd() {
+        return labelsToAdd;
+    }
+
+    public void setLabelsToAdd(List<String> labelsToAdd) {
+        this.labelsToAdd = labelsToAdd;
+    }
+
+    public List<String> getLabelsToDel() {
+        return labelsToDel;
+    }
+
+    public void setLabelsToDel(List<String> labelsToDel) {
+        this.labelsToDel = labelsToDel;
     }
 
     public String getTimeframe() {

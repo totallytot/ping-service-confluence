@@ -1,5 +1,6 @@
 package com.bstrctlmnt.servlet;
 
+import com.atlassian.confluence.labels.LabelManager;
 import com.atlassian.confluence.spaces.SpaceManager;
 import com.atlassian.confluence.spaces.SpaceStatus;
 import com.atlassian.confluence.user.UserAccessor;
@@ -37,17 +38,20 @@ public class Configuration extends HttpServlet {
     private final SpaceManager spaceManager;
     @ComponentImport
     private final UserAccessor userAccessor;
+    @ComponentImport
+    private final LabelManager labelManager;
 
     @Inject
     public Configuration(PluginConfigurationService pluginConfigurationService, UserManager userManager,
                          LoginUriProvider loginUriProvider, UserAccessor userAccessor, TemplateRenderer renderer,
-                         SpaceManager spaceManager) {
+                         SpaceManager spaceManager, LabelManager labelManager) {
         this.userManager = userManager;
         this.loginUriProvider = loginUriProvider;
         this.renderer = renderer;
         this.spaceManager = spaceManager;
         this.userAccessor = userAccessor;
         this.pluginConfigurationService = pluginConfigurationService;
+        this.labelManager = labelManager;
     }
 
     private void redirectToLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -72,9 +76,16 @@ public class Configuration extends HttpServlet {
             return;
         }
 
+        //load data for context from DB
         Map<String, Object> context = pluginConfigurationService.getConfiguration();
-        context.put("allSpaceKeys", spaceManager.getAllSpaceKeys(SpaceStatus.CURRENT));
+
+        List allLabels = new ArrayList();
+        Collection<String> allSpaceKeys = spaceManager.getAllSpaceKeys(SpaceStatus.CURRENT);
+        allSpaceKeys.forEach(spaceKey -> allLabels.addAll(labelManager.getLabelsInSpace(spaceKey)));
+        context.put("allSpaceKeys", allSpaceKeys);
         context.put("allGroups", userAccessor.getGroupsAsList());
+        context.put("allLabels", allLabels);
+
         resp.setContentType("text/html;charset=utf-8");
         renderer.render("configuration.vm", context, resp.getWriter());
         resp.getWriter().close();

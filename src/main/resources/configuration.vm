@@ -27,6 +27,16 @@
                     </select>
             </div>
 
+            <div class="field-group-ps">
+                <label for="ignoredLabels">Pages with these labels will be excluded from the search:</label>
+                <select class="multi-select" multiple="multiple" size="8" id="ignoredLabels">
+                    #foreach($label in $allLabels)
+                        <option value="$label.toString()"
+                            #if ($ignoredLabels.contains($label.toString())) selected #end>$label</option>
+                    #end
+                </select>
+            </div>
+
             <div>
                 <label for="timeframe">Period to consider pages as outdated (day(s)):
                     <input type="number" min="0" id="timeframe" class="text" value="$!timeframe">

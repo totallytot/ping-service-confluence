@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.bstrctlmnt.ao.Labels;
 import org.apache.log4j.Logger;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -60,9 +61,9 @@ public class PluginDataServiceImpl implements PluginDataService {
     }
 
     @Override
-    public void removeAffectedSpace(String SpaceKey) {
+    public void removeAffectedSpace(String spaceKey) {
         ao.executeInTransaction((TransactionCallback<Void>) () -> {
-            for (AffectedSpaces as : ao.find(AffectedSpaces.class, "AFFECTED_SPACE_KEY = ?", SpaceKey)) {
+            for (AffectedSpaces as : ao.find(AffectedSpaces.class, "AFFECTED_SPACE_KEY = ?", spaceKey)) {
                 try {
                     as.getEntityManager().delete(as);
                 } catch (SQLException e) {
@@ -106,6 +107,42 @@ public class PluginDataServiceImpl implements PluginDataService {
             return null;
         });
         return groups;
+    }
+
+    @Override
+    public void addLabel(String label) {
+        ao.executeInTransaction(() -> {
+            final Labels labels = ao.create(Labels.class);
+            labels.setLabel(label);
+            labels.save();
+            return labels;
+        });
+    }
+
+    @Override
+    public Set<String> getLabels() {
+        Set<String> labels = new HashSet<>();
+        ao.executeInTransaction((TransactionCallback<Void>) () -> {
+            for (Labels la : ao.find(Labels.class))
+                labels.add(la.getLabel());
+            return null;
+        });
+        return labels;
+    }
+
+    @Override
+    public void removeLabel(String label) {
+        ao.executeInTransaction((TransactionCallback<Void>) () -> {
+            for (Labels la : ao.find(Labels.class, "LABEL = ?", label)) {
+                try {
+                    la.getEntityManager().delete(la);
+                } catch (SQLException e) {
+                    log.error(e.getMessage(), e);
+                }
+            }
+            return null;
+        });
+
     }
 
     @Override

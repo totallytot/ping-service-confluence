@@ -5,6 +5,8 @@ AJS.toInit(function () {
     dataObject.keysToDel = [];
     dataObject.groupsToAdd = [];
     dataObject.groupsToDel = [];
+    dataObject.labelsToAdd = [];
+    dataObject.labelsToDel = [];
 
     AJS.$(document).on('change', '#monitoredSpaceKeys', function (e) {
         if (e.added) {
@@ -29,6 +31,20 @@ AJS.toInit(function () {
         if (e.removed) {
             if (dataObject.groupsToAdd.includes(e.removed.id)) dataObject.groupsToAdd.splice(dataObject.groupsToAdd.indexOf(e.removed.id), 1);
             else dataObject.groupsToDel.push(e.removed.id);
+            console.log('remove ' + e.removed.id);
+        }
+    });
+
+    AJS.$(document).on('change', '#ignoredLabels', function (e) {
+        if (e.added) {
+            console.log('add ' + e.added.id);
+            if (dataObject.labelsToDel.includes(e.added.id)) dataObject.labelsToDel.splice(dataObject.labelsToDel.indexOf(e.added.id), 1);
+            else dataObject.labelsToAdd.push(e.added.id);
+
+        }
+        if (e.removed) {
+            if (dataObject.labelsToAdd.includes(e.removed.id)) dataObject.labelsToAdd.splice(dataObject.labelsToAdd.indexOf(e.removed.id), 1);
+            else dataObject.labelsToDel.push(e.removed.id);
             console.log('remove ' + e.removed.id);
         }
     });
@@ -87,6 +103,8 @@ AJS.toInit(function () {
         dataObject.keysToDel = [];
         dataObject.groupsToAdd = [];
         dataObject.groupsToDel = [];
+        dataObject.labelsToAdd = [];
+        dataObject.labelsToDel = [];
     }
 
     AJS.$("#clear-button").click(function () {
