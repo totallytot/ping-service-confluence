@@ -115,7 +115,7 @@ public class PingJob implements JobRunner {
             });
 
             // mail variables
-            String mailbody = pluginDataService.getMailBody().replace("$creator", confluenceUser.getName())
+            String mailbody = pluginDataService.getMailBody().replace("$creator", confluenceUser.getFullName())
                     .replace("$days", timeframe.toString())
                     .replace("$links", links.toString());
 
