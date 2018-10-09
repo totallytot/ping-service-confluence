@@ -2,10 +2,6 @@ SELECT DISTINCT c.contentid
 FROM content c
   INNER JOIN spaces sp
     ON sp.spaceid = c.spaceid
-  LEFT JOIN content_label cl
-    ON c.contentid = cl.contentid
-  LEFT JOIN label l
-    ON cl.labelid = l.labelid
 WHERE c.contenttype = 'PAGE'
       AND c.content_status = 'current'
       AND sp.spacekey IN (SELECT "AFFECTED_SPACE_KEY"
@@ -25,6 +21,3 @@ WHERE c.contenttype = 'PAGE'
                   AND cg.group_name IN (SELECT "AFFECTED_GROUP"
                                         FROM "AO_DB634A_AFFECTED_GROUPS")
           )
-      AND (l.name NOT IN (SELECT "LABEL"
-                          FROM "AO_DB634A_LABELS")
-           OR l.name IS NULL);

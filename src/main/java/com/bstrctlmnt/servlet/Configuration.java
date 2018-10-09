@@ -79,7 +79,7 @@ public class Configuration extends HttpServlet {
         //load data for context from DB
         Map<String, Object> context = pluginConfigurationService.getConfiguration();
 
-        List allLabels = new ArrayList();
+        Set allLabels = new HashSet();
         Collection<String> allSpaceKeys = spaceManager.getAllSpaceKeys(SpaceStatus.CURRENT);
         allSpaceKeys.forEach(spaceKey -> allLabels.addAll(labelManager.getLabelsInSpace(spaceKey)));
         context.put("allSpaceKeys", allSpaceKeys);

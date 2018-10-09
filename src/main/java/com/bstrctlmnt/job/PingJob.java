@@ -1,5 +1,6 @@
 package com.bstrctlmnt.job;
 
+import com.atlassian.confluence.labels.Label;
 import com.atlassian.confluence.pages.Page;
 import com.atlassian.confluence.pages.PageManager;
 import com.atlassian.confluence.setup.settings.SettingsManager;
@@ -25,6 +26,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @ExportAsService({PingJob.class})
 @Named("pingJob")
@@ -77,6 +79,9 @@ public class PingJob implements JobRunner {
                 Timestamp tsDate = Timestamp.valueOf(requiredDate.format(formatter));
                 List<String> outdatedPagesIds = pagesDAOService.getOutdatedPages(tsDate);
 
+                //get ignored labels from DB
+                Set<String> ignoredLabelsFromDB = pluginDataService.getLabels();
+
                 //sort pages by creator and send email
                 if (outdatedPagesIds != null && outdatedPagesIds.size() > 0)
                 {
@@ -84,7 +89,15 @@ public class PingJob implements JobRunner {
                     outdatedPagesIds.forEach((id) -> {
                         Page page = pageManager.getPage(Long.parseLong(id));
                         ConfluenceUser creator = page.getCreator();
-                        if (creator != null) multiMap.put(creator, page);
+
+                        //compare page labels and ignored labels
+                        boolean isIgnored = false;
+                        if (ignoredLabelsFromDB != null && ignoredLabelsFromDB.size() > 0) {
+                            List<String> pageLabelsNames = page.getLabels().stream().map(Label::getName).collect(Collectors.toList());
+                            isIgnored = pageLabelsNames.stream().anyMatch(ignoredLabelsFromDB::contains);
+                        }
+
+                        if (creator != null && !isIgnored) multiMap.put(creator, page);
                     });
                     createNotificationAndSendEmail(multiMap, timeframe, pingNotification);
                 }
